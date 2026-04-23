@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* ── Theme Variables ─────────────────────────────────── */
+:root {
+  --bg-base:   #080808;
+  --bg-raised: #0f0f0f;
+  --t1: #f5f5f5;
+  --t2: rgba(245,245,245,0.65);
+  --t3: rgba(245,245,245,0.38);
+  --t4: rgba(245,245,245,0.18);
+  --glass-bg:        rgba(255,255,255,0.04);
+  --glass-border:    rgba(255,255,255,0.08);
+  --glass-warm-bg:   rgba(234,88,12,0.06);
+  --glass-warm-bdr:  rgba(234,88,12,0.15);
+  --glass-card-bg:   rgba(255,255,255,0.03);
+  --glass-card-bdr:  rgba(255,255,255,0.06);
+  --glass-card-hov:  rgba(255,255,255,0.06);
+  --scrollbar-track: #0a0a0a;
+  --grid-line:       rgba(234,88,12,0.04);
+  --fade-base:       #080808;
+  --border-subtle:   rgba(255,255,255,0.06);
+}
+
+html.light {
+  --bg-base:   #f3efe9;
+  --bg-raised: #e8e3dc;
+  --t1: #0f0f0f;
+  --t2: rgba(15,15,15,0.60);
+  --t3: rgba(15,15,15,0.38);
+  --t4: rgba(15,15,15,0.18);
+  --glass-bg:        rgba(0,0,0,0.04);
+  --glass-border:    rgba(0,0,0,0.09);
+  --glass-warm-bg:   rgba(234,88,12,0.07);
+  --glass-warm-bdr:  rgba(234,88,12,0.20);
+  --glass-card-bg:   rgba(0,0,0,0.03);
+  --glass-card-bdr:  rgba(0,0,0,0.07);
+  --glass-card-hov:  rgba(0,0,0,0.06);
+  --scrollbar-track: #e8e3dc;
+  --grid-line:       rgba(234,88,12,0.06);
+  --fade-base:       #f3efe9;
+  --border-subtle:   rgba(0,0,0,0.06);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ── Base ────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--t1);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* ── Grain overlay ───────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.30;
+  mix-blend-mode: soft-light;
+}
+
+html.light body::before {
+  opacity: 0.34;
+  mix-blend-mode: multiply;
+}
+
+/* ── Themed text/bg utilities ────────────────────────── */
+.text-t1  { color: var(--t1); }
+.text-t2  { color: var(--t2); }
+.text-t3  { color: var(--t3); }
+.text-t4  { color: var(--t4); }
+.bg-base  { background-color: var(--bg-base); }
+.bg-raised { background-color: var(--bg-raised); }
+.border-subtle { border-color: var(--border-subtle); }
+
+.hover\:text-t1:hover { color: var(--t1); }
+.hover\:text-t2:hover { color: var(--t2); }
+
+/* ── Glass morphism ──────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-warm {
+  background: var(--glass-warm-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-warm-bdr);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-card-bdr);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--glass-card-hov);
+  border-color: rgba(234, 88, 12, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Gradient text ───────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow effects ────────────────────────────────────── */
+.glow-orange {
+  box-shadow: 0 0 40px rgba(234,88,12,0.15), 0 0 80px rgba(234,88,12,0.05);
+}
+
+.glow-orange-sm {
+  box-shadow: 0 0 20px rgba(234,88,12,0.2);
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before { left: 100%; }
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(234,88,12,0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#f59e0b, #ea580c);
+  border-radius: 3px;
+}
+
+/* ── Section dividers ────────────────────────────────── */
+.section-divider {
+  background: linear-gradient(90deg, transparent, rgba(234,88,12,0.4), transparent);
+  height: 1px;
+  width: 100%;
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(234,88,12,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(234,88,12,0.4); }
+}
+
+.animate-float      { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* ── Hero grid ───────────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Hero bottom fade ────────────────────────────────── */
+.hero-fade {
+  background: linear-gradient(to top, var(--fade-base), transparent);
+}
+
+/* ── Orbs ────────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.orb-orange { background: radial-gradient(circle, #ea580c, transparent 70%); }
+.orb-amber  { background: radial-gradient(circle, #f59e0b, transparent 70%); }
+
+/* Light mode orbs - slightly more visible */
+html.light .orb { opacity: 0.2; }
