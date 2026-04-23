@@ -49,6 +49,7 @@ html.light {
 /* ── Base ────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {

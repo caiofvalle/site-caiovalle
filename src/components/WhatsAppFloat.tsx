@@ -15,7 +15,7 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 group"
     >
       <div className="relative flex items-center justify-center">
         {/* Pulse rings */}

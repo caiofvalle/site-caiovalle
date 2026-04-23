@@ -20,6 +20,11 @@ export const metadata: Metadata = {
       "Fotografia, vídeo e consultoria de marca para o universo do Jiu-Jitsu",
     type: "website",
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  },
 };
 
 export default function RootLayout({
