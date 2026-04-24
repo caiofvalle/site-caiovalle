@@ -6,7 +6,7 @@ const services = [
   {
     icon: Camera,
     tag: "Destaque — Fotografia",
-    title: "Imagens que capturam a essência do jiu-jitsu",
+    title: "Imagens que contam a história por trás da dedicação",
     description:
       "Cobertura fotográfica profissional de campeonatos, seminários e treinos. Cada frame conta a história da sua jornada com a precisão e intensidade que o esporte exige.",
     features: [
