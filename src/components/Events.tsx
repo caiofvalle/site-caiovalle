@@ -1,4 +1,4 @@
-import { MapPin, Calendar, ExternalLink } from "lucide-react";
+import { MapPin, Calendar, ExternalLink, ShieldCheck } from "lucide-react";
 
 const events = [
   {
@@ -58,11 +58,9 @@ export default function Events() {
                 event.highlight ? "border-orange-500/25 glow-orange-sm" : ""
               }`}
             >
-              {/* Index */}
-              <div className="hidden md:flex w-12 h-12 rounded-xl items-center justify-center shrink-0">
-                <span className="gradient-text text-2xl font-black leading-none">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+              {/* Icon */}
+              <div className="hidden md:flex w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 items-center justify-center shrink-0">
+                <ShieldCheck size={22} className="text-white" />
               </div>
 
               {/* Divider */}
