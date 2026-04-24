@@ -14,7 +14,7 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 const galleries = [
   {
     id: 1,
-    src: "/campeonato.jpg",
+    src: "/campeonats.jpg",
     alt: "Campeonatos",
     category: "Campeonatos",
     description: "Cobertura em eventos e campeonatos",
