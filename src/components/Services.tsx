@@ -37,7 +37,7 @@ const services = [
   },
   {
     icon: TrendingUp,
-    tag: "Consultoria de Marca",
+    tag: "Consultoria de Imagem",
     title: "Posicionamento estratégico para atletas e academias",
     description:
       "Muito além da câmera. Desenvolvemos a identidade visual, narrativa e estratégia de conteúdo para que você seja reconhecido como referência no jiu-jitsu — dentro e fora do tatame.",
