@@ -32,9 +32,9 @@ const galleries = [
   {
     id: 3,
     src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
-    alt: "Academias",
-    category: "Academias",
-    description: "Identidade visual de academias",
+    alt: "Seminários",
+    category: "Seminários",
+    description: "Fotografia e vídeo para seminários",
     href: "#contact",
   },
   {
