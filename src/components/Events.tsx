@@ -11,6 +11,16 @@ const events = [
     highlight: true,
     description: "Cobertura fotográfica e audiovisual de atletas e do campeonato.",
   },
+  {
+    id: 2,
+    name: "European Jiu-Jitsu Championship",
+    date: "23-24 Mai 2025",
+    location: "Setúbal, Portugal",
+    venue: "Pavilhão Municipal das Manteigadas",
+    status: "Confirmado",
+    highlight: false,
+    description: "Cobertura fotográfica e audiovisual do campeonato europeu.",
+  },
 ];
 
 const WHATSAPP_NUMBER = "5511999999999";
