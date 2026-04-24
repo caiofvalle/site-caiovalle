@@ -45,7 +45,7 @@ const services = [
       "Estratégia de conteúdo para redes sociais",
       "Identidade visual e direção criativa",
       "Mentoria de posicionamento e autoridade",
-      "Acompanhamento mensal de resultados",
+      "Criação de sites personalizados",
     ],
     accent: "from-amber-400 via-orange-500 to-red-500",
     highlight: false,
