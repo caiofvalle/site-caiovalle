@@ -19,7 +19,7 @@ const galleries = [
     category: "Campeonatos",
     description: "Cobertura de eventos e competições",
     href: "#contact",
-    position: "object-right",
+    position: "70% center",
   },
   {
     id: 2,
@@ -88,7 +88,8 @@ export default function Gallery() {
                 src={item.src}
                 alt={item.alt}
                 fill
-                className={`object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-60 ${"position" in item ? item.position : ""}`}
+                className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-60"
+                style={"position" in item ? { objectPosition: item.position as string } : {}}
                 sizes="(max-width: 768px) 50vw, 25vw"
                 unoptimized
               />
