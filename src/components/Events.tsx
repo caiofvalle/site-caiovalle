@@ -23,7 +23,7 @@ const events = [
   },
 ];
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "351925232484";
 
 export default function Events() {
   const contactUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

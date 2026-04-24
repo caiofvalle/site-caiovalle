@@ -5,7 +5,7 @@ import { Menu, X, MessageCircle, Sun, Moon } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE =
   "Olá Caio! Vi seu site e gostaria de saber mais sobre seus serviços de fotografia/vídeo para jiu-jitsu.";
 

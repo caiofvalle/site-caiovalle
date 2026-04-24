@@ -1,7 +1,7 @@
 import { MessageCircle, Mail, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE = "Olá Caio! Gostaria de mais informações.";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {

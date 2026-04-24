@@ -1,6 +1,6 @@
 import { MessageCircle, ArrowRight, Mail } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE =
   "Olá Caio! Vim pelo seu site e gostaria de conversar sobre uma proposta para meu projeto/evento.";
 
