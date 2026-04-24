@@ -68,7 +68,7 @@ export default function Gallery() {
             href="#contact"
             className="flex items-center gap-2 text-t3 hover:text-orange-400 text-sm transition-colors duration-200 group"
           >
-            Ver todas as galerias
+            Ver galerias disponíveis
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"
