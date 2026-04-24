@@ -18,22 +18,6 @@ const testimonials = [
     text: "A consultoria de marca mudou completamente como eu me posiciono nas redes sociais. Em 3 meses meu Instagram cresceu 200% e comecei a receber propostas de patrocínio. Investimento que valeu cada centavo.",
     rating: 5,
   },
-  {
-    name: "Clube Spartan BJJ",
-    role: "Academia",
-    academy: "São Paulo, SP",
-    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
-    text: "Contratamos o Caio para cobrir nosso torneio anual e ficamos impressionados. As fotos viraram material de marketing da academia e nos ajudaram a captar mais de 40 novos alunos em um mês.",
-    rating: 5,
-  },
-  {
-    name: "Thiago Borges",
-    role: "Atleta IBJJF — Faixa Preta",
-    academy: "Alliance São Paulo",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
-    text: "Profissional impecável. Entrega no prazo, qualidade absurda e ainda entende o que você precisa antes de você mesmo pedir. Melhor investimento que fiz para minha carreira esportiva.",
-    rating: 5,
-  },
 ];
 
 export default function Testimonials() {
