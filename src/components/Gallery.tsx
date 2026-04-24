@@ -14,7 +14,7 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 const galleries = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80",
+    src: "/campeonatos.jpg",
     alt: "Campeonatos",
     category: "Campeonatos",
     description: "Cobertura de eventos e competições",
@@ -22,7 +22,7 @@ const galleries = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+    src: "/ateletas.JPG",
     alt: "Atletas",
     category: "Atletas",
     description: "Ensaios e retratos individuais",
