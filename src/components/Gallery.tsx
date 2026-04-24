@@ -39,7 +39,7 @@ const galleries = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
+    src: "/bastidores.jpg",
     alt: "Bastidores",
     category: "Bastidores",
     description: "Os momentos fora do tatame",
