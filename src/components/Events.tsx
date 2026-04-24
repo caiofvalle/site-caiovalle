@@ -4,7 +4,7 @@ const events = [
   {
     id: 1,
     name: "MSC Championship BJJ 3rd Edition",
-    date: "16 Mai 2025",
+    date: "16 Mai 2026",
     location: "Seixal, Portugal",
     venue: "Pavilhão Municipal da Torre da Marinha",
     status: "Confirmado",
@@ -14,7 +14,7 @@ const events = [
   {
     id: 2,
     name: "European Jiu-Jitsu Championship",
-    date: "23-24 Mai 2025",
+    date: "23-24 Mai 2026",
     location: "Setúbal, Portugal",
     venue: "Pavilhão Municipal das Manteigadas",
     status: "Confirmado",
