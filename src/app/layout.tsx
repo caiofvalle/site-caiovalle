@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Caio Valle BJJ Photographer | Fotografia & Vídeo para o Jiu-Jitsu",
+  title: "Caio Valle BJJ Photographer",
   description:
     "Fotografia profissional, produção de vídeo e consultoria de posicionamento de marca para atletas e academias de Jiu-Jitsu. Credenciado IBJJF.",
   keywords:

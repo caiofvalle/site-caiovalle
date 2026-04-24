@@ -115,7 +115,7 @@ export default function Footer() {
             direitos reservados.
           </p>
           <p className="text-t4 text-xs opacity-60">
-            Credenciado pela IBJJF · São Paulo, Brasil
+            Portugal & Europa
           </p>
         </div>
       </div>

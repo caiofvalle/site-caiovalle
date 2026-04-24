@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "WebSearch",
+      "WebFetch(domain:pixieset.instatus.com)",
+      "WebFetch(domain:pixieset.com)",
+      "WebFetch(domain:pixelstuermer.github.io)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:help.pixieset.com)",
+      "WebFetch(domain:www.getapp.com)",
+      "WebFetch(domain:pixieset-alternatives.com)"
     ]
   }
 }
