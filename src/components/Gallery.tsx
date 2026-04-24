@@ -17,7 +17,7 @@ const galleries = [
     src: "/campeonato.jpg",
     alt: "Campeonatos",
     category: "Campeonatos",
-    description: "Cobertura de eventos e competições",
+    description: "Cobertura em eventos e campeonatos",
     href: "#contact",
     position: "70% center",
   },
