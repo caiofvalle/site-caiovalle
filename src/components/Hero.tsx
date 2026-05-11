@@ -27,7 +27,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="text-t2 text-lg md:text-xl max-w-2xl leading-relaxed mb-4">
-          Posicionamento de imagem para atletas e academias de Jiu-Jitsu.
+          Fotografia profissional de Brazilian Jiu-Jitsu — campeonatos, atletas e seminários.
         </p>
 
         {/* Highlight line */}
@@ -44,7 +44,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2 text-white font-bold px-8 py-4 rounded-full text-base"
           >
-            Quero minha proposta
+            Falar no WhatsApp
             <ArrowRight size={18} />
           </a>
           <a

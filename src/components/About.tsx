@@ -19,8 +19,8 @@ const credentials = [
   },
   {
     icon: Award,
-    label: "Especialista em Imagem",
-    sub: "Estratégias para atletas",
+    label: "Portfólio Pixieset",
+    sub: "Galerias privadas para clientes",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function About() {
                 <div className="glass rounded-xl px-4 py-3">
                   <p className="text-white font-bold text-base">Caio Valle</p>
                   <p className="text-orange-400 text-xs tracking-wide">
-                    Fotógrafo & Especialista em Imagem
+                    Fotógrafo de Brazilian Jiu-Jitsu
                   </p>
                 </div>
               </div>
@@ -98,8 +98,7 @@ export default function About() {
                 <span className="text-orange-400">
                   Minha missão é simples:
                 </span>{" "}
-                fazer com que sua marca, seu atleta ou sua academia seja vista,
-                lembrada e respeitada.
+                preservar com fidelidade cada momento que o jiu-jitsu produz — e devolver isso em imagens que você vai querer guardar para sempre.
               </p>
             </div>
 

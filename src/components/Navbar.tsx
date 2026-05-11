@@ -7,12 +7,11 @@ import { useTheme } from "./ThemeProvider";
 
 const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE =
-  "Olá Caio! Vi seu site e gostaria de saber mais sobre seus serviços de fotografia/vídeo para jiu-jitsu.";
+  "Olá Caio! Vi seu site e gostaria de saber mais sobre fotografia de jiu-jitsu.";
 
 const navLinks = [
-  { label: "Serviços", href: "#services" },
   { label: "Galeria", href: "#gallery" },
-  { label: "Eventos", href: "#events" },
+  { label: "Agenda", href: "#events" },
   { label: "Sobre", href: "#about" },
   { label: "Contato", href: "#contact" },
 ];

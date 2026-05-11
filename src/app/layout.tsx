@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     apple: "/favicon.ico",
   },
   description:
-    "Fotografia profissional, produção de vídeo e consultoria de posicionamento de marca para atletas e academias de Jiu-Jitsu. Credenciado IBJJF.",
+    "Fotografia profissional de Brazilian Jiu-Jitsu. Cobertura de campeonatos, ensaios de atletas e seminários. Disponível em Portugal e Europa.",
   keywords:
-    "fotografia jiu jitsu, vídeo bjj, IBJJF, fotografia esportiva, posicionamento de marca atletas",
+    "fotografia jiu jitsu, fotografia bjj, IBJJF, fotografia esportiva, fotógrafo jiu jitsu portugal, campeonatos bjj",
   openGraph: {
-    title: "Caio Valle BJJ Studio",
+    title: "Caio Valle BJJ Photographer",
     description:
-      "Fotografia, vídeo e consultoria de marca para o universo do Jiu-Jitsu",
+      "Fotografia profissional de Brazilian Jiu-Jitsu — campeonatos, atletas e seminários",
     type: "website",
   },
   viewport: {

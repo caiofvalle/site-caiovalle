@@ -2,7 +2,7 @@ import { MessageCircle, ArrowRight, Mail } from "lucide-react";
 
 const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE =
-  "Olá Caio! Vim pelo seu site e gostaria de conversar sobre uma proposta para meu projeto/evento.";
+  "Olá Caio! Vim pelo seu site e gostaria de conversar sobre fotografia para o meu evento/ensaio.";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
@@ -32,15 +32,13 @@ export default function CTA() {
 
           {/* Headline */}
           <h2 className="text-4xl md:text-6xl font-black text-t1 leading-tight mb-6">
-            Pronto para elevar{" "}
-            <span className="gradient-text">sua imagem no desporto?</span>
+            Quer registar{" "}
+            <span className="gradient-text">o seu momento no tatame?</span>
           </h2>
 
           {/* Subtext */}
           <p className="text-t2 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12">
-            Seja para um campeonato, ensaio, produção de vídeo ou uma
-            consultoria completa de posicionamento — vamos construir juntos uma
-            presença que te diferencia no tatame e fora dele.
+            Seja para um campeonato, ensaio individual ou cobertura de seminário — entre em contacto e vamos garantir que cada momento fica registado com qualidade.
           </p>
 
           {/* Main CTA */}
