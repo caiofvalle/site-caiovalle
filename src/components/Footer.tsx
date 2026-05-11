@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="mb-6">
               <div className="relative overflow-hidden h-16 w-72">
                 <Image
-                  src="/logo2.png"
+                  src="/logo v.png"
                   alt="Caio Valle BJJ Photographer"
                   fill
                   className="object-contain object-bottom"
