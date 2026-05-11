@@ -68,10 +68,10 @@ export default function Events() {
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-t1 font-bold text-lg">{event.name}</h3>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="text-t1 font-bold text-base md:text-lg">{event.name}</h3>
                   <span
-                    className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full ${
+                    className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 ${
                       event.status === "Confirmado"
                         ? "bg-orange-500/15 text-orange-400"
                         : "bg-[var(--glass-bg)] text-t3 border border-orange-500/40"

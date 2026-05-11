@@ -30,7 +30,7 @@ export default function About() {
       <div className="orb orb-amber w-[400px] h-[400px] top-0 left-1/2 opacity-[0.05]" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image side */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-w-md mx-auto md:mx-0">
@@ -55,7 +55,7 @@ export default function About() {
             </div>
 
             {/* Floating credential card */}
-            <div className="absolute -right-4 md:-right-10 top-1/3 glass-warm rounded-2xl p-4 animate-float">
+            <div className="hidden sm:block absolute -right-4 md:-right-10 top-1/3 glass-warm rounded-2xl p-4 animate-float">
               <p className="text-orange-400 text-2xl font-black">5+</p>
               <p className="text-t2 text-xs">Anos de experiência</p>
               <p className="text-t3 text-[10px]">em fotografia</p>

@@ -30,19 +30,19 @@ export default function Hero() {
 
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-8 w-full sm:w-auto px-4 sm:px-0">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary flex items-center gap-2 text-white font-bold px-8 py-4 rounded-full text-base"
+            className="btn-primary flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-full text-base w-full sm:w-auto"
           >
             Falar no WhatsApp
             <ArrowRight size={18} />
           </a>
           <a
             href="#gallery"
-            className="flex items-center gap-2 glass text-t2 hover:text-t1 px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:border-orange-500/25"
+            className="flex items-center justify-center gap-2 glass text-t2 hover:text-t1 px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:border-orange-500/25 w-full sm:w-auto"
           >
             Ver Galerias
           </a>

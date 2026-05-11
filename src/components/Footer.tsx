@@ -15,15 +15,16 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 }
 
 const footerLinks = {
-  Serviços: [
-    { label: "Fotografia", href: "#services" },
-    { label: "Produção de Vídeo", href: "#services" },
-    { label: "Posicionamento de Imagem", href: "#services" },
+  Galerias: [
+    { label: "Mafra Cup '26", href: "https://galerias.thevallesfotografia.com/mafracup26/" },
+    { label: "Campeonato Português", href: "https://galerias.thevallesfotografia.com/fpjjb/" },
+    { label: "Winter BJJ '26", href: "https://galerias.thevallesfotografia.com/winterbjj/" },
   ],
   Navegação: [
     { label: "Galeria", href: "#gallery" },
-    { label: "Próximos Eventos", href: "#events" },
+    { label: "Agenda", href: "#events" },
     { label: "Sobre", href: "#about" },
+    { label: "Contato", href: "#contact" },
   ],
 };
 
@@ -38,7 +39,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <div className="mb-6">
-              <div className="relative overflow-hidden h-16 w-72">
+              <div className="relative overflow-hidden h-14 w-56 md:w-72">
                 <Image
                   src="/logo v.png"
                   alt="Caio Valle BJJ Photographer"
@@ -48,7 +49,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-t3 text-sm leading-relaxed max-w-xs mb-6">
-              Fotografia e Posicionamento de Imagem para o universo do Jiu-Jitsu.
+              Fotografia profissional de Brazilian Jiu-Jitsu — campeonatos, atletas e seminários.
             </p>
 
             {/* Social */}
