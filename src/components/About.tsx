@@ -95,7 +95,7 @@ export default function About() {
                 profissionalismo para quem está construindo sua história.
               </p>
               <p>
-                <span className="text-orange-400">
+                <span className="text-white">
                   Minha missão é simples:
                 </span>{" "}
                 preservar com fidelidade cada momento que o jiu-jitsu produz — e devolver isso em imagens que você vai querer guardar para sempre.

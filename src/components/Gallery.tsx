@@ -14,36 +14,37 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 const galleries = [
   {
     id: 1,
-    src: "/campeonats.jpg",
-    alt: "Campeonatos",
-    category: "Campeonatos",
-    description: "Cobertura em eventos e campeonatos",
+    src: "",
+    alt: "MSC Championship '26",
+    category: "MSC Championship '26",
+    description: "Em breve",
     href: "#contact",
-    position: "70% center",
+    comingSoon: true,
   },
   {
     id: 2,
-    src: "/ateletas.JPG",
-    alt: "Atletas",
-    category: "Atletas",
-    description: "Ensaios e retratos individuais",
-    href: "#contact",
+    src: "/mafracup.jpg",
+    alt: "Mafra Cup '26",
+    category: "Mafra Cup '26",
+    description: "Cobertura em eventos e campeonatos",
+    href: "https://galerias.thevallesfotografia.com/mafracup26/",
+    position: "70% center",
   },
   {
     id: 3,
-    src: "/seminarios.jpg",
-    alt: "Seminários",
-    category: "Seminários",
-    description: "Fotografia e vídeo para seminários",
-    href: "#contact",
+    src: "/fpjjb.jpg",
+    alt: "Campeonato Português | FPJJB '26",
+    category: "Campeonato Português | FPJJB '26",
+    description: "Ensaios e retratos individuais",
+    href: "https://galerias.thevallesfotografia.com/fpjjb/",
   },
   {
     id: 4,
-    src: "/bastidores.jpg",
-    alt: "Bastidores",
-    category: "Bastidores",
-    description: "Os momentos fora do tatame",
-    href: "#contact",
+    src: "/winter.jpg",
+    alt: "Winter BJJ '26",
+    category: "Winter BJJ '26",
+    description: "Fotografia e vídeo para seminários",
+    href: "https://galerias.thevallesfotografia.com/winterbjj/",
   },
 ];
 
@@ -57,11 +58,11 @@ export default function Gallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
-              Galeria
+              Galerias Disponíveis
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-t1">
-              Cada foto, uma{" "}
-              <span className="gradient-text">história real</span>
+              Encontre aqui as{" "}
+              <span className="gradient-text">suas fotos</span>
             </h2>
           </div>
           <a
@@ -77,12 +78,23 @@ export default function Gallery() {
         </div>
 
         {/* 4 vertical photos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 h-[520px] md:h-[640px]">
-          {galleries.map((item) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {galleries.map((item) =>
+            "comingSoon" in item && item.comingSoon ? (
+              <div
+                key={item.id}
+                className="relative overflow-hidden rounded-2xl glass-card flex flex-col items-center justify-center gap-3 border border-dashed border-orange-500/20 aspect-[4/5]"
+              >
+                <p className="text-orange-400/60 text-xs tracking-[0.3em] uppercase font-medium">Em Breve</p>
+                <p className="text-t2 text-sm font-semibold text-center px-4">{item.category}</p>
+              </div>
+            ) : (
             <a
               key={item.id}
               href={item.href}
-              className="relative overflow-hidden rounded-2xl group cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[4/5]"
             >
               <Image
                 src={item.src}
@@ -110,12 +122,13 @@ export default function Gallery() {
                   {item.category}
                 </p>
                 <div className="flex items-center gap-1.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white/60 text-xs">{item.description}</p>
+                  <p className="text-orange-400/80 text-xs">{item.description}</p>
                   <ArrowRight size={12} className="text-orange-400 shrink-0" />
                 </div>
               </div>
             </a>
-          ))}
+            )
+          )}
         </div>
 
         {/* Instagram CTA */}
@@ -128,7 +141,7 @@ export default function Gallery() {
           >
             <InstagramIcon size={20} />
             <span className="text-sm font-medium">
-              Conheça mais em nosso Instagram
+              Ver mais no Instagram
             </span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>

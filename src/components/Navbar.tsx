@@ -72,7 +72,7 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Alternar tema"
-            className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all duration-200 hover:border-orange-500/30"
+            className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all duration-200 hover:border-orange-500/25"
           >
             {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
           </button>

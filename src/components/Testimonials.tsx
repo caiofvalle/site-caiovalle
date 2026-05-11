@@ -54,12 +54,12 @@ export default function Testimonials() {
                   <Star
                     key={j}
                     size={14}
-                    className="text-amber-400 fill-amber-400"
+                    className="text-white fill-amber-400"
                   />
                 ))}
               </div>
 
-              <Quote size={24} className="text-orange-500/30" />
+              <Quote size={24} className="text-blue-900/30" />
 
               <p className="text-t2 text-sm leading-relaxed flex-1">{t.text}</p>
 

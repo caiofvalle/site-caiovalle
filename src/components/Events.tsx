@@ -9,17 +9,17 @@ const events = [
     venue: "Pavilhão Municipal da Torre da Marinha",
     status: "Confirmado",
     highlight: true,
-    description: "Cobertura fotográfica e audiovisual de atletas e do campeonato.",
+    description: "Cobertura fotográfica dos atletas e do campeonato.",
   },
   {
     id: 2,
-    name: "European Jiu-Jitsu Championship",
-    date: "23-24 Mai 2026",
-    location: "Setúbal, Portugal",
-    venue: "Pavilhão Municipal das Manteigadas",
-    status: "Confirmado",
+    name: "ADCC IBERIAN OPEN Lisbon '26",
+    date: "30 Mai 2026",
+    location: "Lisboa, Portugal",
+    venue: "Casal Vistoso Sports Complex",
+    status: "Aguardando Confirmação",
     highlight: false,
-    description: "Cobertura fotográfica e audiovisual do campeonato europeu.",
+    description: "Cobertura fotográfica dos atletas e do campeonato.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Events() {
             <div
               key={event.id}
               className={`glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6 ${
-                event.highlight ? "border-orange-500/25 glow-orange-sm" : ""
+                event.highlight ? "border-orange-500/20 glow-orange-sm" : ""
               }`}
             >
               {/* Icon */}
@@ -74,7 +74,7 @@ export default function Events() {
                     className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full ${
                       event.status === "Confirmado"
                         ? "bg-orange-500/15 text-orange-400"
-                        : "bg-[var(--glass-bg)] text-t3"
+                        : "bg-[var(--glass-bg)] text-t3 border border-orange-500/40"
                     }`}
                   >
                     {event.status}
@@ -111,7 +111,7 @@ export default function Events() {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-t4 text-sm mb-4">
-            Seu evento não está na lista?
+            Vai estar em algum desses eventos?
           </p>
           <a
             href={contactUrl}
@@ -119,7 +119,7 @@ export default function Events() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors underline underline-offset-4"
           >
-            Entre em contato para solicitar cobertura personalizada
+            Entre em contacto para obter sua cobertura fotográfica
             <ExternalLink size={14} />
           </a>
         </div>

@@ -19,7 +19,7 @@ export default function WhatsAppFloat() {
     >
       <div className="relative flex items-center justify-center">
         {/* Pulse rings */}
-        <span className="absolute w-14 h-14 rounded-full bg-orange-500/20 animate-ping" />
+        <span className="absolute w-14 h-14 rounded-full bg-orange-500/15 animate-ping" />
         <span className="absolute w-14 h-14 rounded-full bg-orange-500/10" />
 
         {/* Button */}
