@@ -54,9 +54,11 @@ export default function Events() {
           {events.map((event, index) => (
             <div
               key={event.id}
-              className={`glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6 ${
-                event.highlight ? "border-white/15 " : ""
-              }`}
+              className={`glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6`}
+              style={event.highlight ? {
+                border: "1px solid rgba(201,168,76,0.45)",
+                boxShadow: "0 0 24px rgba(201,168,76,0.12), inset 0 0 24px rgba(201,168,76,0.04)",
+              } : {}}
             >
               {/* Icon */}
               <div className="hidden md:flex w-12 h-12 rounded-xl bg-gradient-to-br from-white/20 to-white/10 items-center justify-center shrink-0">
