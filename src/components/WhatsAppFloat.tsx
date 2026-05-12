@@ -23,7 +23,10 @@ export default function WhatsAppFloat() {
         <span className="absolute w-14 h-14 rounded-full bg-white/8" />
 
         {/* Button */}
-        <div className="relative w-14 h-14 btn-primary rounded-full flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-110 transition-transform duration-300">
+        <div
+          className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-110 transition-transform duration-300"
+          style={{ background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)" }}
+        >
           <MessageCircle size={24} className="text-white" />
         </div>
 
