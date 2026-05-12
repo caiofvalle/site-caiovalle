@@ -68,8 +68,24 @@ export default function Gallery() {
                 key={item.id}
                 className="relative overflow-hidden rounded-2xl glass-card flex flex-col items-center justify-center gap-3 border border-dashed border-white/15 aspect-[4/5]"
               >
-                <p className="text-white/40 text-xs tracking-[0.3em] uppercase font-medium">Em Breve</p>
-                <p className="text-t2 text-sm font-semibold text-center px-4">{item.category}</p>
+                <p
+                  className="text-xs tracking-[0.3em] uppercase font-medium"
+                  style={{
+                    background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >Em Breve</p>
+                <p
+                  className="text-sm font-semibold text-center px-4"
+                  style={{
+                    background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >{item.category}</p>
               </div>
             ) : (
             <a
