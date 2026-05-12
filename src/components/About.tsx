@@ -59,11 +59,6 @@ export default function About() {
             </div>
 
             {/* Floating credential card */}
-            <div className="hidden sm:block absolute -right-4 md:-right-10 top-1/3 glass-card rounded-2xl p-4 animate-float">
-              <p className="text-white/60 text-2xl font-black">5+</p>
-              <p className="text-t2 text-xs">Anos de experiência</p>
-              <p className="text-t3 text-[10px]">em fotografia</p>
-            </div>
 
             {/* Decorative element */}
             <div className="absolute -left-4 -bottom-4 w-32 h-32 rounded-2xl border border-white/15 -z-10" />
