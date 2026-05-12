@@ -74,10 +74,12 @@ export default function Events() {
                   <h3 className="text-t1 font-bold text-base md:text-lg">{event.name}</h3>
                   <span
                     className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 ${
-                      event.status === "Confirmado"
-                        ? "bg-white/10 text-white/60"
-                        : "bg-[var(--glass-bg)] text-t3 border border-white/30"
+                      event.status !== "Confirmado" ? "bg-[var(--glass-bg)] text-t3 border border-white/30" : ""
                     }`}
+                    style={event.status === "Confirmado" ? {
+                      background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                      color: "#000",
+                    } : {}}
                   >
                     {event.status}
                   </span>
