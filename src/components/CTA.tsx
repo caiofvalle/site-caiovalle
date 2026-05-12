@@ -72,11 +72,11 @@ export default function CTA() {
             </a>
             <span className="hidden sm:block text-t4">·</span>
             <a
-              href="mailto:contato@caiovalle.com"
+              href="mailto:contacto@caiovalle.com"
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail size={16} />
-              contato@caiovalle.com
+              contacto@caiovalle.com
             </a>
           </div>
         </div>
