@@ -8,7 +8,7 @@ export default function Hero() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden hero-grid">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
       {/* Background orbs */}
       <div className="orb orb-orange w-[600px] h-[600px] -top-40 -right-40" />
       <div className="orb orb-amber w-[400px] h-[400px] bottom-0 -left-20" />
@@ -20,7 +20,7 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-tight mb-6 max-w-5xl mt-8">
           <span className="text-t1">ENCONTRE SUAS</span>
           <br />
-          <span className="gradient-text">FOTOS ABAIXO</span>
+          <span className="gradient-text">FOTOS LOGO ABAIXO</span>
         </h1>
 
         <a
