@@ -42,7 +42,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center group">
           <div className="relative overflow-hidden h-10 w-48">
             <Image
-              src="/logo v.png"
+              src="/logocaiov.png"
               alt="Caio Valle BJJ Photographer"
               fill
               className="object-contain object-bottom"
