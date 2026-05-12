@@ -57,7 +57,7 @@ export default function Gallery() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-2">Galerias Disponíveis</p>
+          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-2">Galerias Disponíveis</p>
         </div>
 
         {/* 4 vertical photos */}
@@ -66,9 +66,9 @@ export default function Gallery() {
             "comingSoon" in item && item.comingSoon ? (
               <div
                 key={item.id}
-                className="relative overflow-hidden rounded-2xl glass-card flex flex-col items-center justify-center gap-3 border border-dashed border-orange-500/20 aspect-[4/5]"
+                className="relative overflow-hidden rounded-2xl glass-card flex flex-col items-center justify-center gap-3 border border-dashed border-white/15 aspect-[4/5]"
               >
-                <p className="text-orange-400/60 text-xs tracking-[0.3em] uppercase font-medium">Em Breve</p>
+                <p className="text-white/40 text-xs tracking-[0.3em] uppercase font-medium">Em Breve</p>
                 <p className="text-t2 text-sm font-semibold text-center px-4">{item.category}</p>
               </div>
             ) : (
@@ -105,8 +105,8 @@ export default function Gallery() {
                   {item.category}
                 </p>
                 <div className="flex items-center gap-1.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-orange-400/80 text-xs">{item.description}</p>
-                  <ArrowRight size={12} className="text-orange-400 shrink-0" />
+                  <p className="text-white/60 text-xs">{item.description}</p>
+                  <ArrowRight size={12} className="text-white/60 shrink-0" />
                 </div>
               </div>
             </a>

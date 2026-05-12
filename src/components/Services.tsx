@@ -15,7 +15,7 @@ const services = [
       "Edição profissional em 48h",
       "Alta resolução para uso digital e impresso",
     ],
-    accent: "from-amber-400 to-orange-500",
+    accent: "from-white/20 to-white/10",
     highlight: true,
     message: "Olá! Quero saber mais sobre fotografia para jiu-jitsu.",
   },
@@ -31,7 +31,7 @@ const services = [
       "Cobertura de eventos ao vivo",
       "Pós-produção completa",
     ],
-    accent: "from-orange-500 to-red-600",
+    accent: "from-white/20 to-white/10",
     highlight: false,
     message: "Olá! Quero saber mais sobre produção de vídeo para jiu-jitsu.",
   },
@@ -47,7 +47,7 @@ const services = [
       "Mentoria de posicionamento e autoridade",
       "Criação de sites personalizados",
     ],
-    accent: "from-amber-400 via-orange-500 to-red-500",
+    accent: "from-white/20 to-white/10",
     highlight: false,
     message:
       "Olá! Tenho interesse na consultoria de posicionamento de marca. Quero saber mais.",
@@ -62,7 +62,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
+          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
             O que oferecemos
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-t1 mb-5">
@@ -85,7 +85,7 @@ export default function Services() {
                 key={service.tag}
                 className={`relative rounded-2xl p-8 flex flex-col transition-all duration-500 ${
                   service.highlight
-                    ? "glass-warm glow-orange border border-orange-500/20"
+                    ? "glass-card"
                     : "glass-card"
                 }`}
               >
@@ -101,7 +101,7 @@ export default function Services() {
                 {/* Tag */}
                 <p
                   className={`text-[11px] font-semibold tracking-[0.3em] uppercase mb-6 ${
-                    service.highlight ? "text-orange-400" : "text-t3"
+                    service.highlight ? "text-white/60" : "text-t3"
                   }`}
                 >
                   {service.tag}
@@ -138,7 +138,7 @@ export default function Services() {
                     >
                       <Check
                         size={14}
-                        className="text-orange-400 mt-0.5 shrink-0"
+                        className="text-white/60 mt-0.5 shrink-0"
                       />
                       {feature}
                     </li>
@@ -153,7 +153,7 @@ export default function Services() {
                   className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     service.highlight
                       ? "btn-primary text-white"
-                      : "glass text-t2 hover:text-t1 hover:border-orange-500/30"
+                      : "glass text-t2 hover:text-t1 hover:border-white/25"
                   }`}
                 >
                   Solicitar proposta

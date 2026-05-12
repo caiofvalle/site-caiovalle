@@ -23,9 +23,9 @@ export default function CTA() {
       <div className="orb orb-amber w-[400px] h-[400px] top-0 right-0 opacity-[0.07]" />
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="glass-warm rounded-3xl p-10 md:p-16 text-center glow-orange">
+        <div className="glass-card rounded-3xl p-10 md:p-16 text-center ">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs text-orange-300 tracking-widest uppercase font-medium mb-8">
+          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs text-white/70 tracking-widest uppercase font-medium mb-8">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
             Disponível para novos projetos
           </div>
@@ -65,7 +65,7 @@ export default function CTA() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-orange-400 transition-colors"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <InstagramIcon size={16} />
               @caiovalle.bjj
@@ -73,7 +73,7 @@ export default function CTA() {
             <span className="hidden sm:block text-t4">·</span>
             <a
               href="mailto:contato@caiovalle.com"
-              className="flex items-center gap-2 hover:text-orange-400 transition-colors"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail size={16} />
               contato@caiovalle.com

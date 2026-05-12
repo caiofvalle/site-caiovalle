@@ -37,7 +37,7 @@ export default function Events() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
+          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
             Agenda
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-t1 mb-5">
@@ -55,11 +55,11 @@ export default function Events() {
             <div
               key={event.id}
               className={`glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6 ${
-                event.highlight ? "border-orange-500/20 glow-orange-sm" : ""
+                event.highlight ? "border-white/15 " : ""
               }`}
             >
               {/* Icon */}
-              <div className="hidden md:flex w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 items-center justify-center shrink-0">
+              <div className="hidden md:flex w-12 h-12 rounded-xl bg-gradient-to-br from-white/20 to-white/10 items-center justify-center shrink-0">
                 <ShieldCheck size={22} className="text-white" />
               </div>
 
@@ -73,8 +73,8 @@ export default function Events() {
                   <span
                     className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 ${
                       event.status === "Confirmado"
-                        ? "bg-orange-500/15 text-orange-400"
-                        : "bg-[var(--glass-bg)] text-t3 border border-orange-500/40"
+                        ? "bg-white/10 text-white/60"
+                        : "bg-[var(--glass-bg)] text-t3 border border-white/30"
                     }`}
                   >
                     {event.status}
@@ -83,11 +83,11 @@ export default function Events() {
                 <p className="text-t3 text-sm mb-3">{event.description}</p>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-t4">
                   <span className="flex items-center gap-1.5">
-                    <Calendar size={12} className="text-orange-400/60" />
+                    <Calendar size={12} className="text-white/40" />
                     <span className="text-t3">{event.date}</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <MapPin size={12} className="text-orange-400/60" />
+                    <MapPin size={12} className="text-white/40" />
                     <span className="text-t3">{event.location}</span>
                   </span>
                   <span>{event.venue}</span>
@@ -99,7 +99,7 @@ export default function Events() {
                 href={contactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 glass text-t3 hover:text-t1 text-xs font-medium px-5 py-2.5 rounded-xl transition-all duration-200 hover:border-orange-500/20 shrink-0"
+                className="flex items-center gap-2 glass text-t3 hover:text-t1 text-xs font-medium px-5 py-2.5 rounded-xl transition-all duration-200 hover:border-white/15 shrink-0"
               >
                 Garantir cobertura
                 <ExternalLink size={12} />
@@ -117,7 +117,7 @@ export default function Events() {
             href={contactUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors underline underline-offset-4"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors underline underline-offset-4"
           >
             Entre em contacto para obter sua cobertura fotográfica
             <ExternalLink size={14} />

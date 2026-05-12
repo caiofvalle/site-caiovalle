@@ -47,7 +47,7 @@ export default function About() {
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="glass rounded-xl px-4 py-3">
                   <p className="text-white font-bold text-base">Caio Valle</p>
-                  <p className="text-orange-400 text-xs tracking-wide">
+                  <p className="text-white/60 text-xs tracking-wide">
                     Fotógrafo de Brazilian Jiu-Jitsu
                   </p>
                 </div>
@@ -56,19 +56,19 @@ export default function About() {
 
             {/* Floating credential card */}
             <div className="hidden sm:block absolute -right-4 md:-right-10 top-1/3 glass-warm rounded-2xl p-4 animate-float">
-              <p className="text-orange-400 text-2xl font-black">5+</p>
+              <p className="text-white/60 text-2xl font-black">5+</p>
               <p className="text-t2 text-xs">Anos de experiência</p>
               <p className="text-t3 text-[10px]">em fotografia</p>
             </div>
 
             {/* Decorative element */}
-            <div className="absolute -left-4 -bottom-4 w-32 h-32 rounded-2xl border border-orange-500/20 -z-10" />
-            <div className="absolute -left-8 -bottom-8 w-32 h-32 rounded-2xl border border-orange-500/10 -z-10" />
+            <div className="absolute -left-4 -bottom-4 w-32 h-32 rounded-2xl border border-white/15 -z-10" />
+            <div className="absolute -left-8 -bottom-8 w-32 h-32 rounded-2xl border border-white/8 -z-10" />
           </div>
 
           {/* Content side */}
           <div>
-            <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
+            <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
               Quem sou eu
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-t1 leading-tight mb-6">
@@ -111,7 +111,7 @@ export default function About() {
                     key={cred.label}
                     className="glass-card rounded-xl p-4 flex items-center gap-3"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center shrink-0">
                       <Icon size={16} className="text-white" />
                     </div>
                     <div>

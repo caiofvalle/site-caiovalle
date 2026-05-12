@@ -28,7 +28,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
+          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
             Depoimentos
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-t1 mb-5">
@@ -54,7 +54,7 @@ export default function Testimonials() {
                   <Star
                     key={j}
                     size={14}
-                    className="text-white fill-amber-400"
+                    className="text-white fill-white/50"
                   />
                 ))}
               </div>
@@ -67,7 +67,7 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 ring-2 ring-orange-500/20">
+                <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 ring-2 ring-white/15">
                   <Image
                     src={t.photo}
                     alt={t.name}
@@ -79,7 +79,7 @@ export default function Testimonials() {
                 <div>
                   <p className="text-t1 font-semibold text-sm">{t.name}</p>
                   <p className="text-t3 text-xs">{t.role}</p>
-                  <p className="text-orange-400/60 text-xs">{t.academy}</p>
+                  <p className="text-white/40 text-xs">{t.academy}</p>
                 </div>
               </div>
             </div>

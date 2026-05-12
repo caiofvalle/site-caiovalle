@@ -19,11 +19,11 @@ export default function WhatsAppFloat() {
     >
       <div className="relative flex items-center justify-center">
         {/* Pulse rings */}
-        <span className="absolute w-14 h-14 rounded-full bg-orange-500/15 animate-ping" />
-        <span className="absolute w-14 h-14 rounded-full bg-orange-500/10" />
+        <span className="absolute w-14 h-14 rounded-full bg-white/10 animate-ping" />
+        <span className="absolute w-14 h-14 rounded-full bg-white/8" />
 
         {/* Button */}
-        <div className="relative w-14 h-14 btn-primary rounded-full flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform duration-300">
+        <div className="relative w-14 h-14 btn-primary rounded-full flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-110 transition-transform duration-300">
           <MessageCircle size={24} className="text-white" />
         </div>
 

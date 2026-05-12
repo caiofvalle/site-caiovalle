@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-orange-400 hover:border-orange-500/25 transition-all"
+                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-white hover:border-white/20 transition-all"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={16} />
@@ -67,14 +67,14 @@ export default function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-orange-400 hover:border-orange-500/25 transition-all"
+                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-white hover:border-white/20 transition-all"
                 aria-label="WhatsApp"
               >
                 <MessageCircle size={16} />
               </a>
               <a
                 href="mailto:contato@caiovalle.com"
-                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-orange-400 hover:border-orange-500/25 transition-all"
+                className="w-9 h-9 glass rounded-lg flex items-center justify-center text-t3 hover:text-white hover:border-white/20 transition-all"
                 aria-label="Email"
               >
                 <Mail size={16} />
