@@ -54,28 +54,6 @@ export default function Gallery() {
       <div className="orb orb-amber w-[400px] h-[400px] top-20 right-0 opacity-[0.06]" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-4">
-              Galerias Disponíveis
-            </p>
-            <h2 className="text-4xl md:text-5xl font-black text-t1">
-              Encontre aqui as{" "}
-              <span className="gradient-text">suas fotos</span>
-            </h2>
-          </div>
-          <a
-            href="#contact"
-            className="flex items-center gap-2 text-t3 hover:text-orange-400 text-sm transition-colors duration-200 group"
-          >
-            Ver galerias disponíveis
-            <ArrowRight
-              size={16}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </a>
-        </div>
 
         {/* 4 vertical photos */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
