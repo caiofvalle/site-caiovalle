@@ -50,12 +50,7 @@ export default function About() {
                   border: "1px solid rgba(201,168,76,0.5)",
                   backdropFilter: "blur(12px)",
                 }}>
-                  <p className="font-bold text-base" style={{
-                    background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}>Caio Valle</p>
+                  <p className="font-bold text-base text-white">Caio Valle</p>
                   <p className="text-white/70 text-xs tracking-wide">
                     Fotógrafo de Brazilian Jiu-Jitsu
                   </p>
@@ -64,20 +59,10 @@ export default function About() {
             </div>
 
             {/* Floating credential card */}
-            <div className="hidden sm:block absolute -right-4 md:-right-10 top-1/3 rounded-2xl p-4 animate-float" style={{
-              background: "linear-gradient(135deg, rgba(139,105,20,0.6) 0%, rgba(255,215,0,0.15) 50%, rgba(218,165,32,0.5) 100%)",
-              border: "1px solid rgba(201,168,76,0.45)",
-              backdropFilter: "blur(16px)",
-              boxShadow: "0 0 20px rgba(201,168,76,0.15)",
-            }}>
-              <p className="text-2xl font-black" style={{
-                background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>5+</p>
-              <p className="text-white/80 text-xs">Anos de experiência</p>
-              <p className="text-white/50 text-[10px]">em fotografia</p>
+            <div className="hidden sm:block absolute -right-4 md:-right-10 top-1/3 glass-card rounded-2xl p-4 animate-float">
+              <p className="text-white/60 text-2xl font-black">5+</p>
+              <p className="text-t2 text-xs">Anos de experiência</p>
+              <p className="text-t3 text-[10px]">em fotografia</p>
             </div>
 
             {/* Decorative element */}
