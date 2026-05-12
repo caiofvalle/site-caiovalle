@@ -129,7 +129,13 @@ export default function Events() {
             href={contactUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors underline underline-offset-4"
+            className="inline-flex items-center gap-2 text-sm font-medium transition-all duration-300"
+            style={{
+              background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
           >
             Entre em contacto para obter sua cobertura fotográfica
             <ExternalLink size={14} />
