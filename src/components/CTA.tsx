@@ -55,7 +55,7 @@ export default function CTA() {
           </a>
 
           <p className="text-t4 text-xs mb-12">
-            Resposta em até 24 horas · Sem compromisso
+            Resposta em até 24 horas
           </p>
 
           <div className="section-divider mb-10" />
