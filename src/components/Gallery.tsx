@@ -55,6 +55,11 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto">
 
+        {/* Header */}
+        <div className="mb-12">
+          <p className="text-orange-400/70 text-xs tracking-[0.4em] uppercase font-medium mb-2">Galerias Disponíveis</p>
+        </div>
+
         {/* 4 vertical photos */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {galleries.map((item) =>
