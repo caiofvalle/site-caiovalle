@@ -24,7 +24,7 @@ export default function Hero() {
           O Tatame conta a história. Eu a registo.
         </p>
 
-        <
+        <a
           href="#gallery"
           className="mt-8 w-14 h-14 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-all duration-300 animate-bounce"
           aria-label="Ver galerias"
