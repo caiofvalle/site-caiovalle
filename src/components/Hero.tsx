@@ -17,10 +17,11 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 flex flex-col items-center text-center">
         {/* Main headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-tight mb-6 max-w-5xl mt-8">
-          <span className="text-t1">ENCONTRE SUAS</span>
+        <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-[0.92] tracking-tight mb-6 max-w-5xl mt-8">
+          <span className="text-t1">ENCONTRE AS SUAS</span>
           <br />
-          <span className="gradient-text">FOTOS LOGO ABAIXO</span>
+          <span className="text-t1">FOTOS NAS </span>
+          <span className="gradient-text">GALERIAS ABAIXO</span>
         </h1>
 
         <a
