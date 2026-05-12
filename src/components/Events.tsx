@@ -103,7 +103,15 @@ export default function Events() {
                 href={contactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 glass text-t3 hover:text-t1 text-xs font-medium px-5 py-2.5 rounded-xl transition-all duration-200 hover:border-white/15 shrink-0"
+                className="flex items-center gap-2 text-xs font-bold px-5 py-2.5 rounded-xl shrink-0 transition-all duration-200"
+                style={event.highlight ? {
+                  background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                  color: "#000",
+                } : {
+                  background: "var(--glass-bg)",
+                  border: "1px solid var(--glass-border)",
+                  color: "var(--t3)",
+                }}
               >
                 Garantir cobertura
                 <ExternalLink size={12} />
