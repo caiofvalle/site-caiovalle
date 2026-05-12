@@ -20,7 +20,11 @@ export default function Hero() {
           <span className="gradient-text">GALERIAS ABAIXO</span>
         </h1>
 
-        <a
+        <p className="text-t3 text-base md:text-lg mt-4 mb-2 tracking-wide">
+          O Tatame conta a história. Eu a registo.
+        </p>
+
+        <
           href="#gallery"
           className="mt-8 w-14 h-14 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-all duration-300 animate-bounce"
           aria-label="Ver galerias"
