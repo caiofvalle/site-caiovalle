@@ -14,7 +14,16 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 flex flex-col items-center text-center">
         {/* Main headline */}
         <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-[0.92] tracking-tight mb-6 max-w-5xl mt-8">
-          <span className="text-t1">ENCONTRE SUAS</span>
+          <span
+            style={{
+              background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: "drop-shadow(0 0 18px rgba(201,168,76,0.35))",
+            }}
+          >ENCONTRE</span>
+          <span className="text-t1"> SUAS</span>
           <br />
           <span className="text-t1">FOTOS NAS </span>
           <span className="gradient-text">GALERIAS ABAIXO</span>
