@@ -11,9 +11,9 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Caio Valle BJJ Photographer",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
   description:
     "Fotografia profissional de Brazilian Jiu-Jitsu. Cobertura de campeonatos, ensaios de atletas e seminários. Disponível em Portugal e Europa.",
