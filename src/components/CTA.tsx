@@ -46,7 +46,8 @@ export default function CTA() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-3 text-white font-bold text-lg px-10 py-5 rounded-full mb-6"
+            className="inline-flex items-center gap-3 text-black font-bold text-lg px-10 py-5 rounded-full mb-6 transition-all duration-300 hover:shadow-[0_0_28px_rgba(201,168,76,0.5)] hover:-translate-y-0.5"
+            style={{ background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)" }}
           >
             <MessageCircle size={22} />
             Falar no WhatsApp agora
