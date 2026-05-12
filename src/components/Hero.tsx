@@ -35,12 +35,7 @@ export default function Hero() {
 
         <a
           href="#gallery"
-          className="mt-8 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 animate-bounce"
-          style={{
-            border: "1px solid rgba(201,168,76,0.5)",
-            color: "#DAA520",
-            boxShadow: "0 0 16px rgba(201,168,76,0.2)",
-          }}
+          className="hero-gold-btn mt-8 w-14 h-14 rounded-full flex items-center justify-center animate-bounce"
           aria-label="Ver galerias"
         >
           <ArrowDown size={20} />
