@@ -1,4 +1,4 @@
-import { ArrowRight, Camera, Film, TrendingUp, ShieldCheck, Clock } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const WHATSAPP_NUMBER = "351925232484";
 const WHATSAPP_MESSAGE =
@@ -23,7 +23,13 @@ export default function Hero() {
           <span className="gradient-text">FOTOS ABAIXO</span>
         </h1>
 
-
+        <a
+          href="#gallery"
+          className="mt-8 w-14 h-14 rounded-full border border-orange-500/40 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 transition-all duration-300 animate-bounce"
+          aria-label="Ver galerias"
+        >
+          <ArrowDown size={20} />
+        </a>
 
         {/* Stats bar — hidden */}
       </div>
