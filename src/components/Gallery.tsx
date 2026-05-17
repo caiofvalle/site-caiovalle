@@ -14,12 +14,11 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 const galleries = [
   {
     id: 1,
-    src: "",
+    src: "/msc.jpg",
     alt: "MSC Championship '26",
     category: "MSC Championship '26",
-    description: "Em breve",
-    href: "#contact",
-    comingSoon: true,
+    description: "Cobertura em eventos e campeonatos",
+    href: "https://galleries.pixieset.com/collections/114742307/sets/164672754",
   },
   {
     id: 2,
