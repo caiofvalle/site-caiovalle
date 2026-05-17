@@ -18,7 +18,7 @@ const galleries = [
     alt: "MSC Championship '26",
     category: "MSC Championship '26",
     description: "Cobertura em eventos e campeonatos",
-    href: "https://galleries.pixieset.com/collections/114742307/sets/164672754",
+    href: "https://galerias.thevallesfotografia.com/mscchampionship26/",
   },
   {
     id: 2,
