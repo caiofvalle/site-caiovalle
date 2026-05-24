@@ -1,5 +1,9 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/i18n/translations";
 
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
@@ -11,21 +15,21 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-const galleries = [
+const galleryItems = [
   {
     id: 1,
-    src: "/msc.jpg",
-    alt: "MSC Championship '26",
-    category: "MSC Championship '26",
-    description: "Cobertura em eventos e campeonatos",
-    href: "https://galerias.thevallesfotografia.com/mscchampionship26/",
+    src: "/sjjif-7.jpg",
+    alt: "SJJIF European '26",
+    category: "SJJIF European '26",
+    descKey: "descEvents" as const,
+    href: "https://galerias.thevallesfotografia.com/sjjifeuropean/",
   },
   {
     id: 2,
     src: "/mafracup.jpg",
     alt: "Mafra Cup '26",
     category: "Mafra Cup '26",
-    description: "Cobertura em eventos e campeonatos",
+    descKey: "descEvents" as const,
     href: "https://galerias.thevallesfotografia.com/mafracup26/",
     position: "70% center",
   },
@@ -34,20 +38,23 @@ const galleries = [
     src: "/fpjjb.jpg",
     alt: "Campeonato Português | FPJJB '26",
     category: "Campeonato Português | FPJJB '26",
-    description: "Ensaios e retratos individuais",
+    descKey: "descPortraits" as const,
     href: "https://galerias.thevallesfotografia.com/fpjjb/",
   },
   {
     id: 4,
-    src: "/winter.jpg",
-    alt: "Winter BJJ '26",
-    category: "Winter BJJ '26",
-    description: "Fotografia e vídeo para seminários",
-    href: "https://galerias.thevallesfotografia.com/winterbjj/",
+    src: "/msc.jpg",
+    alt: "MSC Championship '26",
+    category: "MSC Championship '26",
+    descKey: "descEvents" as const,
+    href: "https://galerias.thevallesfotografia.com/mscchampionship26/",
   },
 ];
 
 export default function Gallery() {
+  const { lang } = useLanguage();
+  const tr = t[lang].gallery;
+
   return (
     <section id="gallery" className="relative py-28 px-6 overflow-hidden">
       <div className="orb orb-amber w-[400px] h-[400px] top-20 right-0 opacity-[0.06]" />
@@ -56,37 +63,12 @@ export default function Gallery() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-2">Galerias Disponíveis</p>
+          <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-2">{tr.sectionLabel}</p>
         </div>
 
         {/* 4 vertical photos */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {galleries.map((item) =>
-            "comingSoon" in item && item.comingSoon ? (
-              <div
-                key={item.id}
-                className="relative overflow-hidden rounded-2xl glass-card flex flex-col items-center justify-center gap-3 border border-dashed border-white/15 aspect-[4/5]"
-              >
-                <p
-                  className="text-xs tracking-[0.3em] uppercase font-medium"
-                  style={{
-                    background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >Em Breve</p>
-                <p
-                  className="text-sm font-semibold text-center px-4"
-                  style={{
-                    background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >{item.category}</p>
-              </div>
-            ) : (
+          {galleryItems.map((item) => (
             <a
               key={item.id}
               href={item.href}
@@ -99,7 +81,7 @@ export default function Gallery() {
                 alt={item.alt}
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-60"
-                style={"position" in item ? { objectPosition: item.position as string } : {}}
+                style={"position" in item ? { objectPosition: (item as { position?: string }).position } : {}}
                 sizes="(max-width: 768px) 50vw, 25vw"
                 unoptimized
               />
@@ -120,13 +102,12 @@ export default function Gallery() {
                   {item.category}
                 </p>
                 <div className="flex items-center gap-1.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white/60 text-xs">{item.description}</p>
+                  <p className="text-white/60 text-xs">{tr[item.descKey]}</p>
                   <ArrowRight size={12} className="text-white/60 shrink-0" />
                 </div>
               </div>
             </a>
-            )
-          )}
+          ))}
         </div>
 
         {/* Instagram CTA */}
@@ -139,7 +120,7 @@ export default function Gallery() {
           >
             <InstagramIcon size={20} />
             <span className="text-sm font-medium">
-              Ver mais no Instagram
+              {tr.instagramCta}
             </span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
