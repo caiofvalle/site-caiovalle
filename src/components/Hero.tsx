@@ -46,19 +46,11 @@ export default function Hero() {
 
         {/* Main headline */}
         <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-[0.92] tracking-tight mb-6 max-w-5xl">
-          <span
-            style={{
-              background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              filter: "drop-shadow(0 0 18px rgba(201,168,76,0.35))",
-            }}
-          >{tr.line1gradient}</span>
+          <span className="text-t1">{tr.line1gradient}</span>
           <span className="text-t1">{tr.line1normal}</span>
           <br />
           <span className="text-t1">{tr.line2normal}</span>
-          <span className="gradient-text">{tr.line2gradient}</span>
+          <span className="text-t1">{tr.line2gradient}</span>
         </h1>
 
         <p className="text-t3 text-base md:text-lg mt-4 mb-2 tracking-wide">
