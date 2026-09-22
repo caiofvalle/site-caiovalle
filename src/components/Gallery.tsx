@@ -1,19 +1,8 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/i18n/translations";
-
-function InstagramIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-    </svg>
-  );
-}
 
 const featuredGalleryItems = [
   {
@@ -151,22 +140,6 @@ export default function Gallery() {
               )
             )}
           </div>
-        </div>
-
-        {/* Instagram CTA */}
-        <div className="flex items-center justify-center mt-10">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-card flex items-center gap-3 px-8 py-4 rounded-2xl text-t3 hover:text-t1 transition-all duration-300 group"
-          >
-            <InstagramIcon size={20} />
-            <span className="text-sm font-medium">
-              {tr.instagramCta}
-            </span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
         </div>
       </div>
     </section>

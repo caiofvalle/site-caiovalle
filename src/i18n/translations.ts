@@ -43,6 +43,7 @@ export interface Translations {
     subtitle: string;
     statusConfirmed: string;
     statusPending: string;
+    tbaEventName: string;
     eventDescription: string;
     secureCoverage: string;
     bottomQuestion: string;
@@ -169,6 +170,7 @@ export const t: Record<Lang, Translations> = {
         "We'll be present at the main championships. If your event is on this list, get in touch to secure your coverage.",
       statusConfirmed: "Confirmed",
       statusPending: "Awaiting Confirmation",
+      tbaEventName: "Next event to be announced",
       eventDescription: "Photo coverage of athletes and the championship.",
       secureCoverage: "Secure coverage",
       bottomQuestion: "Will you be at any of these events?",
@@ -305,6 +307,7 @@ export const t: Record<Lang, Translations> = {
         "Estaremos presentes nos principais campeonatos. Se seu evento está nessa lista, entre em contato para garantir sua cobertura.",
       statusConfirmed: "Confirmado",
       statusPending: "Aguardando Confirmação",
+      tbaEventName: "Próximo evento a anunciar",
       eventDescription: "Cobertura fotográfica dos atletas e do campeonato.",
       secureCoverage: "Garantir cobertura",
       bottomQuestion: "Vai estar em algum desses eventos?",
@@ -441,6 +444,7 @@ export const t: Record<Lang, Translations> = {
         "Nous serons présents aux principaux championnats. Si votre événement figure sur cette liste, contactez-nous pour assurer votre couverture.",
       statusConfirmed: "Confirmé",
       statusPending: "En attente de Confirmation",
+      tbaEventName: "Prochain événement à annoncer",
       eventDescription: "Couverture photo des athlètes et du championnat.",
       secureCoverage: "Réserver la couverture",
       bottomQuestion: "Vous serez à l'un de ces événements ?",
@@ -578,6 +582,7 @@ export const t: Record<Lang, Translations> = {
         "Estaremos presentes en los principales campeonatos. Si tu evento está en esta lista, contáctanos para asegurar tu cobertura.",
       statusConfirmed: "Confirmado",
       statusPending: "Pendiente de Confirmación",
+      tbaEventName: "Próximo evento por anunciar",
       eventDescription: "Cobertura fotográfica de los atletas y el campeonato.",
       secureCoverage: "Asegurar cobertura",
       bottomQuestion: "¿Estarás en alguno de estos eventos?",

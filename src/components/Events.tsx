@@ -8,48 +8,11 @@ const WHATSAPP_NUMBER = "351925232484";
 
 const events = [
   {
-    id: 4,
-    name: "Allstars Lisbon",
-    date: "12 Jul 2026",
-    location: "Lisboa, Portugal",
-    venue: "Pavilhão Casal Vistoso",
-    confirmed: true,
-    highlight: true,
-  },
-  {
-    id: 5,
-    name: "GRANDSLAM FPJJB '26",
+    id: 1,
     date: "",
     location: "",
     venue: "",
-    confirmed: true,
-    highlight: false,
-  },
-  {
-    id: 2,
-    name: "ADCC IBERIAN OPEN Lisbon '26",
-    date: "30 Mai 2026",
-    location: "Lisboa, Portugal",
-    venue: "Casal Vistoso Sports Complex",
-    confirmed: true,
-    highlight: false,
-  },
-  {
-    id: 1,
-    name: "MSC Championship BJJ 3rd Edition",
-    date: "16 Mai 2026",
-    location: "Seixal, Portugal",
-    venue: "Pavilhão Municipal da Torre da Marinha",
-    confirmed: true,
-    highlight: false,
-  },
-  {
-    id: 3,
-    name: "AJP Sines",
-    date: "13 Jun 2026",
-    location: "Sines, Portugal",
-    venue: "Pavilhão Multiusos, Sines",
-    confirmed: true,
+    confirmed: false,
     highlight: false,
   },
 ];
@@ -100,7 +63,7 @@ export default function Events() {
               {/* Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <h3 className="text-t1 font-bold text-base md:text-lg">{event.name}</h3>
+                  <h3 className="text-t1 font-bold text-base md:text-lg">{tr.tbaEventName}</h3>
                   <span
                     className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 ${
                       !event.confirmed ? "bg-[var(--glass-bg)] text-t3 border border-white/30" : ""
@@ -114,17 +77,23 @@ export default function Events() {
                   </span>
                 </div>
                 <p className="text-t3 text-sm mb-3">{tr.eventDescription}</p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-t4">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={12} className="text-white/40" />
-                    <span className="text-t3">{event.date}</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MapPin size={12} className="text-white/40" />
-                    <span className="text-t3">{event.location}</span>
-                  </span>
-                  <span>{event.venue}</span>
-                </div>
+                {(event.date || event.location || event.venue) && (
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-t4">
+                    {event.date && (
+                      <span className="flex items-center gap-1.5">
+                        <Calendar size={12} className="text-white/40" />
+                        <span className="text-t3">{event.date}</span>
+                      </span>
+                    )}
+                    {event.location && (
+                      <span className="flex items-center gap-1.5">
+                        <MapPin size={12} className="text-white/40" />
+                        <span className="text-t3">{event.location}</span>
+                      </span>
+                    )}
+                    {event.venue && <span>{event.venue}</span>}
+                  </div>
+                )}
               </div>
 
               {/* CTA */}
