@@ -17,6 +17,14 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 
 const featuredGalleryItems = [
   {
+    id: 10,
+    src: "/ajploures.jpg",
+    alt: "AJP Loures",
+    category: "AJP Loures",
+    descKey: "descEvents" as const,
+    href: "https://galerias.thevallesfotografia.com/ajploures/",
+  },
+  {
     id: 6,
     src: "/ajpsines-300.jpg",
     alt: "AJP Sines",
@@ -88,14 +96,14 @@ export default function Gallery() {
         </div>
 
         {/* gallery photos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredGalleryItems.map((item) => (
             <a
               key={item.id}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[16/10]"
+              className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[3/4]"
             >
               <Image
                 src={item.src}
