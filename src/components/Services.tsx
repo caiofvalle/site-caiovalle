@@ -1,60 +1,48 @@
+"use client";
+
 import { Camera, Film, TrendingUp, Check, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/i18n/translations";
 
 const WHATSAPP_NUMBER = "351925232484";
 
-const services = [
-  {
-    icon: Camera,
-    tag: "Destaque — Fotografia",
-    title: "Imagens que contam a história por trás da dedicação",
-    description:
-      "Cobertura fotográfica profissional de campeonatos, seminários e treinos. Cada frame conta a história da sua jornada com a precisão e intensidade que o esporte exige.",
-    features: [
-      "Cobertura de campeonatos IBJJF",
-      "Ensaios para atletas e academias",
-      "Edição profissional em 48h",
-      "Alta resolução para uso digital e impresso",
-    ],
-    accent: "from-white/20 to-white/10",
-    highlight: true,
-    message: "Olá! Quero saber mais sobre fotografia para jiu-jitsu.",
-  },
-  {
-    icon: Film,
-    tag: "Vídeo",
-    title: "Produções que elevam seu nível de profissionalismo",
-    description:
-      "De highlight reels a documentários de academia — criamos conteúdo audiovisual que gera engajamento, atrai alunos e projeta atletas para o próximo nível.",
-    features: [
-      "Highlight reels para atletas",
-      "Vídeos institucionais de academias",
-      "Cobertura de eventos ao vivo",
-      "Pós-produção completa",
-    ],
-    accent: "from-white/20 to-white/10",
-    highlight: false,
-    message: "Olá! Quero saber mais sobre produção de vídeo para jiu-jitsu.",
-  },
-  {
-    icon: TrendingUp,
-    tag: "Consultoria de Imagem",
-    title: "Posicionamento estratégico para atletas e academias",
-    description:
-      "Muito além da câmera. Desenvolvemos a identidade visual, narrativa e estratégia de conteúdo para que você seja reconhecido como referência no jiu-jitsu — dentro e fora do tatame.",
-    features: [
-      "Estratégia de conteúdo para redes sociais",
-      "Identidade visual e direção criativa",
-      "Mentoria de posicionamento e autoridade",
-      "Criação de sites personalizados",
-    ],
-    accent: "from-white/20 to-white/10",
-    highlight: false,
-    message:
-      "Olá! Tenho interesse na consultoria de posicionamento de marca. Quero saber mais.",
-  },
-];
-
 export default function Services() {
+  const { lang } = useLanguage();
+  const tr = t[lang].services;
+
+  const services = [
+    {
+      icon: Camera,
+      tag: tr.photoTag,
+      title: tr.photoTitle,
+      description: tr.photoDescription,
+      features: [tr.photoF1, tr.photoF2, tr.photoF3, tr.photoF4],
+      accent: "from-white/20 to-white/10",
+      highlight: true,
+      message: tr.photoMessage,
+    },
+    {
+      icon: Film,
+      tag: tr.videoTag,
+      title: tr.videoTitle,
+      description: tr.videoDescription,
+      features: [tr.videoF1, tr.videoF2, tr.videoF3, tr.videoF4],
+      accent: "from-white/20 to-white/10",
+      highlight: false,
+      message: tr.videoMessage,
+    },
+    {
+      icon: TrendingUp,
+      tag: tr.consultTag,
+      title: tr.consultTitle,
+      description: tr.consultDescription,
+      features: [tr.consultF1, tr.consultF2, tr.consultF3, tr.consultF4],
+      accent: "from-white/20 to-white/10",
+      highlight: false,
+      message: tr.consultMessage,
+    },
+  ];
+
   return (
     <section id="services" className="relative py-28 px-6 overflow-hidden">
       <div className="orb orb-orange w-[500px] h-[500px] top-0 left-0 opacity-[0.06]" />
@@ -63,14 +51,14 @@ export default function Services() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
-            O que oferecemos
+            {tr.sectionLabel}
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-t1 mb-5">
-            A fotografia que{" "}
-            <span className="gradient-text">transforma carreiras</span>
+            {tr.headline1}
+            <span className="gradient-text">{tr.headline2}</span>
           </h2>
           <p className="text-t3 max-w-xl mx-auto text-base leading-relaxed">
-            Cada serviço foi desenhado pensando na realidade do atleta e da academia.
+            {tr.subtitle}
           </p>
         </div>
 
@@ -83,17 +71,13 @@ export default function Services() {
             return (
               <div
                 key={service.tag}
-                className={`relative rounded-2xl p-8 flex flex-col transition-all duration-500 ${
-                  service.highlight
-                    ? "glass-card"
-                    : "glass-card"
-                }`}
+                className="relative rounded-2xl p-8 flex flex-col transition-all duration-500 glass-card"
               >
                 {/* Highlight badge */}
                 {service.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="btn-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-full tracking-widest uppercase">
-                      Mais Procurado
+                      {tr.mostRequested}
                     </span>
                   </div>
                 )}
@@ -156,7 +140,7 @@ export default function Services() {
                       : "glass text-t2 hover:text-t1 hover:border-white/25"
                   }`}
                 >
-                  Solicitar proposta
+                  {tr.requestProposal}
                   <ArrowRight size={15} />
                 </a>
               </div>

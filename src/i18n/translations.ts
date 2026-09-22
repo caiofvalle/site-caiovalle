@@ -34,6 +34,7 @@ export interface Translations {
     descEvents: string;
     descPortraits: string;
     descSeminars: string;
+    moreGalleries: string;
   };
   events: {
     sectionLabel: string;
@@ -158,6 +159,7 @@ export const t: Record<Lang, Translations> = {
       descEvents: "Event and championship coverage",
       descPortraits: "Individual portraits and shoots",
       descSeminars: "Photography and video for seminars",
+      moreGalleries: "More galleries available",
     },
     events: {
       sectionLabel: "Schedule",
@@ -293,6 +295,7 @@ export const t: Record<Lang, Translations> = {
       descEvents: "Cobertura em eventos e campeonatos",
       descPortraits: "Ensaios e retratos individuais",
       descSeminars: "Fotografia e vídeo para seminários",
+      moreGalleries: "Mais galerias disponíveis",
     },
     events: {
       sectionLabel: "Agenda",
@@ -428,6 +431,7 @@ export const t: Record<Lang, Translations> = {
       descEvents: "Couverture d'événements et de championnats",
       descPortraits: "Portraits et séances individuels",
       descSeminars: "Photographie et vidéo pour séminaires",
+      moreGalleries: "Plus de galeries disponibles",
     },
     events: {
       sectionLabel: "Agenda",
@@ -564,6 +568,7 @@ export const t: Record<Lang, Translations> = {
       descEvents: "Cobertura de eventos y campeonatos",
       descPortraits: "Retratos y sesiones individuales",
       descSeminars: "Fotografía y vídeo para seminarios",
+      moreGalleries: "Más galerías disponibles",
     },
     events: {
       sectionLabel: "Agenda",

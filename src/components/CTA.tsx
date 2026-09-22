@@ -1,8 +1,10 @@
+"use client";
+
 import { MessageCircle, ArrowRight, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/i18n/translations";
 
 const WHATSAPP_NUMBER = "351925232484";
-const WHATSAPP_MESSAGE =
-  "Olá Caio! Vim pelo seu site e gostaria de conversar sobre fotografia para o meu evento/ensaio.";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
@@ -15,7 +17,10 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 }
 
 export default function CTA() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const { lang } = useLanguage();
+  const tr = t[lang].cta;
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(tr.whatsappMessage)}`;
 
   return (
     <section id="contact" className="relative py-28 px-6 overflow-hidden">
@@ -27,18 +32,18 @@ export default function CTA() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs text-white/70 tracking-widest uppercase font-medium mb-8">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-            Disponível para novos projetos
+            {tr.badge}
           </div>
 
           {/* Headline */}
           <h2 className="text-4xl md:text-6xl font-black text-t1 leading-tight mb-6">
-            Quer registar{" "}
-            <span className="gradient-text">o seu momento no tatame?</span>
+            {tr.headline1}
+            <span className="gradient-text">{tr.headline2}</span>
           </h2>
 
           {/* Subtext */}
           <p className="text-t2 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12">
-            Seja para um campeonato, ensaio individual ou cobertura de seminário — entre em contacto e vamos garantir que cada momento fica registado com qualidade.
+            {tr.subtitle}
           </p>
 
           {/* Main CTA */}
@@ -50,12 +55,12 @@ export default function CTA() {
             style={{ background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)" }}
           >
             <MessageCircle size={22} />
-            Falar no WhatsApp agora
+            {tr.btn}
             <ArrowRight size={18} />
           </a>
 
           <p className="text-t4 text-xs mb-12">
-            Resposta em até 24 horas
+            {tr.response}
           </p>
 
           <div className="section-divider mb-10" />

@@ -1,8 +1,11 @@
+"use client";
+
 import { MessageCircle, Mail, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/i18n/translations";
 
 const WHATSAPP_NUMBER = "351925232484";
-const WHATSAPP_MESSAGE = "Olá Caio! Gostaria de mais informações.";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
@@ -14,22 +17,29 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-const footerLinks = {
-  Galerias: [
-    { label: "Mafra Cup '26", href: "https://galerias.thevallesfotografia.com/mafracup26/" },
-    { label: "Campeonato Português", href: "https://galerias.thevallesfotografia.com/fpjjb/" },
-    { label: "Winter BJJ '26", href: "https://galerias.thevallesfotografia.com/winterbjj/" },
-  ],
-  Navegação: [
-    { label: "Galeria", href: "#gallery" },
-    { label: "Agenda", href: "#events" },
-    { label: "Sobre", href: "#about" },
-    { label: "Contato", href: "#contact" },
-  ],
-};
+const galleryLinks = [
+  { label: "Mafra Cup '26", href: "https://galerias.thevallesfotografia.com/mafracup26/" },
+  { label: "Campeonato Português", href: "https://galerias.thevallesfotografia.com/fpjjb/" },
+  { label: "Winter BJJ '26", href: "https://galerias.thevallesfotografia.com/winterbjj/" },
+];
 
 export default function Footer() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const { lang } = useLanguage();
+  const tr = t[lang].footer;
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(tr.whatsappMessage)}`;
+
+  const navLinks = [
+    { label: tr.navGallery, href: "#gallery" },
+    { label: tr.navEvents, href: "#events" },
+    { label: tr.navAbout, href: "#about" },
+    { label: tr.navContact, href: "#contact" },
+  ];
+
+  const footerSections = [
+    { category: tr.galleriesCategory, links: galleryLinks },
+    { category: tr.navigationCategory, links: navLinks },
+  ];
 
   return (
     <footer className="relative border-t border-subtle pt-16 pb-8 px-6">
@@ -49,7 +59,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-t3 text-sm leading-relaxed max-w-xs mb-6">
-              Fotografia profissional de Brazilian Jiu-Jitsu — campeonatos, atletas e seminários.
+              {tr.brandDescription}
             </p>
 
             {/* Social */}
@@ -83,7 +93,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
+          {footerSections.map(({ category, links }) => (
             <div key={category}>
               <p className="text-t4 text-[11px] tracking-[0.3em] uppercase font-medium mb-5">
                 {category}
@@ -112,11 +122,10 @@ export default function Footer() {
         <div className="section-divider mb-8" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-t4 text-xs">
-            © {new Date().getFullYear()} Caio Valle BJJ Photographer. Todos os
-            direitos reservados.
+            © {new Date().getFullYear()} Caio Valle BJJ Photographer. {tr.copyright}
           </p>
           <p className="text-t4 text-xs opacity-60">
-            Portugal & Europa
+            {tr.region}
           </p>
         </div>
       </div>

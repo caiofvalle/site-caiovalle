@@ -4,22 +4,24 @@ import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle, Sun, Moon } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t, languages } from "@/i18n/translations";
 
 const WHATSAPP_NUMBER = "351925232484";
-const WHATSAPP_MESSAGE =
-  "Olá Caio! Vi seu site e gostaria de saber mais sobre fotografia de jiu-jitsu.";
-
-const navLinks = [
-  { label: "Galeria", href: "#gallery" },
-  { label: "Agenda", href: "#events" },
-  { label: "Sobre", href: "#about" },
-  { label: "Contato", href: "#contact" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const { lang, setLang } = useLanguage();
+  const tr = t[lang].navbar;
+
+  const navLinks = [
+    { label: tr.gallery, href: "#gallery" },
+    { label: tr.events, href: "#events" },
+    { label: tr.about, href: "#about" },
+    { label: tr.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -27,7 +29,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(tr.whatsappMessage)}`;
 
   return (
     <nav
@@ -68,10 +70,35 @@ export default function Navbar() {
 
         {/* Right side controls */}
         <div className="hidden md:flex items-center gap-3">
+          {/* Language selector */}
+          <div className="flex items-center gap-0.5 glass rounded-full px-1 py-1">
+            {languages.map((l, i) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                className={`text-[11px] font-semibold px-2 py-1 rounded-full transition-all duration-200 ${
+                  lang === l.code
+                    ? "text-black"
+                    : "text-t3 hover:text-t1"
+                }`}
+                style={
+                  lang === l.code
+                    ? {
+                        background:
+                          "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                      }
+                    : {}
+                }
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
           {/* Theme toggle */}
           <button
             onClick={toggle}
-            aria-label="Alternar tema"
+            aria-label={tr.themeAriaLabel}
             className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all duration-200 hover:border-white/20"
           >
             {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
@@ -85,15 +112,38 @@ export default function Navbar() {
             className="flex items-center gap-2 btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full"
           >
             <MessageCircle size={15} />
-            WhatsApp
+            {tr.whatsappBtn}
           </a>
         </div>
 
         {/* Mobile controls */}
         <div className="md:hidden flex items-center gap-3">
+          {/* Language selector mobile */}
+          <div className="flex items-center gap-0.5 glass rounded-full px-1 py-1">
+            {languages.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full transition-all duration-200 ${
+                  lang === l.code ? "text-black" : "text-t3"
+                }`}
+                style={
+                  lang === l.code
+                    ? {
+                        background:
+                          "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
+                      }
+                    : {}
+                }
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={toggle}
-            aria-label="Alternar tema"
+            aria-label={tr.themeAriaLabel}
             className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all"
           >
             {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
@@ -128,7 +178,7 @@ export default function Navbar() {
             className="flex items-center justify-center gap-2 btn-primary text-white text-sm font-semibold px-5 py-3 rounded-full mt-2"
           >
             <MessageCircle size={16} />
-            Falar no WhatsApp
+            {tr.whatsappMobile}
           </a>
         </div>
       )}

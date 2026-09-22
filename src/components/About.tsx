@@ -1,30 +1,21 @@
+"use client";
+
 import { Award, Camera, Globe, Users } from "lucide-react";
 import Image from "next/image";
-
-const credentials = [
-  {
-    icon: Camera,
-    label: "Fotógrafo Profissional",
-    sub: "Especialista em artes marciais",
-  },
-  {
-    icon: Globe,
-    label: "Passe de Mídia",
-    sub: "Acesso a eventos internacionais",
-  },
-  {
-    icon: Users,
-    label: "Comunidade BJJ",
-    sub: "Praticante e entusiasta",
-  },
-  {
-    icon: Award,
-    label: "Portfólio Pixieset",
-    sub: "Galerias privadas para clientes",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/i18n/translations";
 
 export default function About() {
+  const { lang } = useLanguage();
+  const tr = t[lang].about;
+
+  const credentials = [
+    { icon: Camera, label: tr.credPhotographerLabel, sub: tr.credPhotographerSub },
+    { icon: Globe, label: tr.credMediaLabel, sub: tr.credMediaSub },
+    { icon: Users, label: tr.credCommunityLabel, sub: tr.credCommunitySub },
+    { icon: Award, label: tr.credPortfolioLabel, sub: tr.credPortfolioSub },
+  ];
+
   return (
     <section id="about" className="relative py-28 px-6 overflow-hidden">
       <div className="orb orb-amber w-[400px] h-[400px] top-0 left-1/2 opacity-[0.05]" />
@@ -36,7 +27,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-w-md mx-auto md:mx-0">
               <Image
                 src="/c971071e-9ccd-47f2-9dd7-929dd5979cbc.JPG"
-                alt="Caio Valle — Fotógrafo BJJ"
+                alt="Caio Valle — BJJ Photographer"
                 fill
                 className="object-cover"
                 unoptimized
@@ -52,13 +43,11 @@ export default function About() {
                 }}>
                   <p className="font-bold text-base text-white">Caio Valle</p>
                   <p className="text-white/70 text-xs tracking-wide">
-                    Fotógrafo de Brazilian Jiu-Jitsu
+                    {tr.badgeSubtitle}
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Floating credential card */}
 
             {/* Decorative element */}
             <div className="absolute -left-4 -bottom-4 w-32 h-32 rounded-2xl border border-white/15 -z-10" />
@@ -68,36 +57,24 @@ export default function About() {
           {/* Content side */}
           <div>
             <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-4">
-              Quem sou eu
+              {tr.sectionLabel}
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-t1 leading-tight mb-6">
-              Apaixonado pelo jiu-jitsu,{" "}
-              <span className="gradient-text">obcecado pela imagem</span>
+              {tr.headline1}
+              <span className="gradient-text">{tr.headline2}</span>
             </h2>
 
             <div className="flex flex-col gap-5 text-t2 text-base leading-relaxed mb-10">
+              <p>{tr.p1}</p>
               <p>
-                Como praticante de jiu-jitsu,
-                sempre senti que as histórias por trás de cada luta mereciam ser
-                preservadas com a mesma intensidade com que eram vividas.
+                {tr.p2a}
+                <span className="text-t1">{tr.p2b}</span>
+                {tr.p2c}
               </p>
+              <p>{tr.p3}</p>
               <p>
-                Transformei essa paixão em propósito:{" "}
-                <span className="text-t1">
-                  ser a ponte entre a arte marcial e a narrativa visual
-                </span>{" "}
-                que coloca atletas e academias no mapa.
-              </p>
-              <p>
-                É um privilégio ter a oportunidade de fotografar e documentar
-                grandes nomes do esporte — e hoje ofereço esse mesmo nível de
-                profissionalismo para quem está construindo sua história.
-              </p>
-              <p>
-                <span className="text-white">
-                  Minha missão é simples:
-                </span>{" "}
-                preservar com fidelidade cada momento que o jiu-jitsu produz — e devolver isso em imagens que você vai querer guardar para sempre.
+                <span className="text-white">{tr.p4a}</span>
+                {tr.p4b}
               </p>
             </div>
 

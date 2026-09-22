@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -11,9 +12,9 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Caio Valle BJJ Photographer",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/justv.png",
+    shortcut: "/justv.png",
+    apple: "/justv.png",
   },
   description:
     "Fotografia profissional de Brazilian Jiu-Jitsu. Cobertura de campeonatos, ensaios de atletas e seminários. Disponível em Portugal e Europa.",
@@ -40,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-base text-t1">
-        <ThemeProvider>{children}</ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

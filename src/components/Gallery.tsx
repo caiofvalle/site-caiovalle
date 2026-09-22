@@ -15,38 +15,59 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-const galleryItems = [
+const featuredGalleryItems = [
+  {
+    id: 6,
+    src: "/ajpsines-300.jpg",
+    alt: "AJP Sines",
+    category: "AJP Sines",
+    descKey: "descEvents" as const,
+    href: "https://galerias.thevallesfotografia.com/ajpsines/",
+  },
+  {
+    id: 5,
+    src: "/adcc-212.jpg",
+    alt: "ADCC Iberian Lisbon '26",
+    category: "ADCC Iberian Lisbon '26",
+    descKey: "descEvents" as const,
+    href: "https://galerias.thevallesfotografia.com/adcciberianlisbonopen/",
+  },
+];
+
+const moreGalleryItems = [
+  {
+    id: 9,
+    category: "Allstars Lisbon",
+    href: null,
+  },
+  {
+    id: 8,
+    category: "GRANDSLAM FPJJB '26",
+    href: "https://galerias.thevallesfotografia.com/grandslam/",
+  },
+  {
+    id: 7,
+    category: "Torredembarra",
+    href: "https://galerias.thevallesfotografia.com/torredembarrachallenge/",
+  },
   {
     id: 1,
-    src: "/sjjif-7.jpg",
-    alt: "SJJIF European '26",
     category: "SJJIF European '26",
-    descKey: "descEvents" as const,
     href: "https://galerias.thevallesfotografia.com/sjjifeuropean/",
   },
   {
     id: 2,
-    src: "/mafracup.jpg",
-    alt: "Mafra Cup '26",
     category: "Mafra Cup '26",
-    descKey: "descEvents" as const,
     href: "https://galerias.thevallesfotografia.com/mafracup26/",
-    position: "70% center",
   },
   {
     id: 3,
-    src: "/fpjjb.jpg",
-    alt: "Campeonato Português | FPJJB '26",
     category: "Campeonato Português | FPJJB '26",
-    descKey: "descPortraits" as const,
     href: "https://galerias.thevallesfotografia.com/fpjjb/",
   },
   {
     id: 4,
-    src: "/msc.jpg",
-    alt: "MSC Championship '26",
     category: "MSC Championship '26",
-    descKey: "descEvents" as const,
     href: "https://galerias.thevallesfotografia.com/mscchampionship26/",
   },
 ];
@@ -66,48 +87,62 @@ export default function Gallery() {
           <p className="text-white/50 text-xs tracking-[0.4em] uppercase font-medium mb-2">{tr.sectionLabel}</p>
         </div>
 
-        {/* 4 vertical photos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {galleryItems.map((item) => (
+        {/* gallery photos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {featuredGalleryItems.map((item) => (
             <a
               key={item.id}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[4/5]"
+              className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[16/10]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-60"
-                style={"position" in item ? { objectPosition: (item as { position?: string }).position } : {}}
-                sizes="(max-width: 768px) 50vw, 25vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 unoptimized
               />
 
               {/* Permanent bottom gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-              {/* Category badge */}
-              <div className="absolute top-4 left-4">
-                <span className="glass text-white/80 text-[10px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full">
-                  {item.category}
-                </span>
-              </div>
-
               {/* Bottom info */}
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-white font-bold text-base leading-tight mb-1">
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white font-bold text-xl leading-tight mb-1">
                   {item.category}
                 </p>
-                <div className="flex items-center gap-1.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white/60 text-xs">{tr[item.descKey]}</p>
-                  <ArrowRight size={12} className="text-white/60 shrink-0" />
-                </div>
               </div>
             </a>
           ))}
+        </div>
+
+        {/* More galleries list */}
+        <div className="mt-10">
+          <p className="text-white/50 text-xs tracking-[0.3em] uppercase font-medium mb-4">
+            {tr.moreGalleries}
+          </p>
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            {moreGalleryItems.map((item) =>
+              item.href ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-t1 text-sm font-medium underline underline-offset-4 decoration-white/30 hover:decoration-t1 transition-colors"
+                >
+                  {item.category}
+                </a>
+              ) : (
+                <span key={item.id} className="text-white/40 text-sm font-medium">
+                  {item.category} ({tr.comingSoon})
+                </span>
+              )
+            )}
+          </div>
         </div>
 
         {/* Instagram CTA */}
