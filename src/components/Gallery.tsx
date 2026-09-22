@@ -11,7 +11,7 @@ const featuredGalleryItems = [
     alt: "AJP Loures",
     category: "AJP Loures",
     descKey: "descEvents" as const,
-    href: "https://galerias.thevallesfotografia.com/ajploures/",
+    href: "https://galerias.thevallesfotografia.com/ajptour/",
   },
   {
     id: 6,
@@ -19,7 +19,7 @@ const featuredGalleryItems = [
     alt: "AJP Sines",
     category: "AJP Sines",
     descKey: "descEvents" as const,
-    href: "https://galerias.thevallesfotografia.com/ajpsines/",
+    href: "https://galerias.thevallesfotografia.com/ajptour/",
   },
   {
     id: 5,
