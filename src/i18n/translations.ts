@@ -146,15 +146,15 @@ export const t: Record<Lang, Translations> = {
     },
     hero: {
       line1gradient: "I",
-      line1normal: " TELL THE",
-      line2normal: "STORIES THAT HAPPEN ",
+      line1normal: " TELL THE STORIES",
+      line2normal: "THAT HAPPEN ",
       line2gradient: "ON THE MAT",
       subtitle: "Find your photos in the galleries below.",
       scrollAriaLabel: "View galleries",
       instagramCta: "See more on my Instagram",
     },
     gallery: {
-      sectionLabel: "Available Galleries",
+      sectionLabel: "Find your photos in the galleries below:",
       instagramCta: "See more on Instagram",
       comingSoon: "Coming Soon",
       descEvents: "Event and championship coverage",
@@ -291,7 +291,7 @@ export const t: Record<Lang, Translations> = {
       instagramCta: "Ver mais no meu Instagram",
     },
     gallery: {
-      sectionLabel: "Galerias Disponíveis",
+      sectionLabel: "Encontra as tuas fotos nas galerias abaixo:",
       instagramCta: "Ver mais no Instagram",
       comingSoon: "Em Breve",
       descEvents: "Cobertura em eventos e campeonatos",
@@ -428,7 +428,7 @@ export const t: Record<Lang, Translations> = {
       instagramCta: "Voir plus sur mon Instagram",
     },
     gallery: {
-      sectionLabel: "Galeries Disponibles",
+      sectionLabel: "Retrouve tes photos dans les galeries ci-dessous :",
       instagramCta: "Voir plus sur Instagram",
       comingSoon: "Bientôt",
       descEvents: "Couverture d'événements et de championnats",
@@ -566,7 +566,7 @@ export const t: Record<Lang, Translations> = {
       instagramCta: "Ver más en mi Instagram",
     },
     gallery: {
-      sectionLabel: "Galerías Disponibles",
+      sectionLabel: "Encuentra tus fotos en las galerías de abajo:",
       instagramCta: "Ver más en Instagram",
       comingSoon: "Próximamente",
       descEvents: "Cobertura de eventos y campeonatos",

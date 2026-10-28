@@ -1,27 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle, Sun, Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, languages } from "@/i18n/translations";
 
-const WHATSAPP_NUMBER = "351925232484";
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggle } = useTheme();
   const { lang, setLang } = useLanguage();
   const tr = t[lang].navbar;
-
-  const navLinks = [
-    { label: tr.gallery, href: "#gallery" },
-    { label: tr.events, href: "#events" },
-    { label: tr.about, href: "#about" },
-    { label: tr.contact, href: "#contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -29,64 +19,40 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(tr.whatsappMessage)}`;
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass border-b border-subtle py-3"
-          : "bg-transparent py-5"
+        scrolled ? "glass border-b border-subtle py-3" : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-10 flex items-center justify-between gap-3">
         {/* Logo */}
-        <a href="#" className="flex items-center group">
-          <div className="relative overflow-hidden h-10 w-48">
+        <a href="#" className="flex items-center shrink-0">
+          <div className="relative overflow-hidden h-8 w-32 sm:h-10 sm:w-44">
             <Image
               src="/logocaiov.png"
               alt="Caio Valle BJJ Photographer"
               fill
-              className="object-contain object-bottom"
+              className="object-contain object-left"
               priority
             />
           </div>
         </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-t3 hover:text-t1 transition-colors duration-200 tracking-wide relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gradient-to-r from-white to-white/50 group-hover:w-full transition-all duration-300" />
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Right side controls */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right controls */}
+        <div className="flex items-center gap-2 shrink-0">
           {/* Language selector */}
           <div className="flex items-center gap-0.5 glass rounded-full px-1 py-1">
-            {languages.map((l, i) => (
+            {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
-                className={`text-[11px] font-semibold px-2 py-1 rounded-full transition-all duration-200 ${
-                  lang === l.code
-                    ? "text-black"
-                    : "text-t3 hover:text-t1"
+                className={`text-[10px] sm:text-[11px] font-semibold px-1.5 sm:px-2 py-1 rounded-full transition-all duration-200 ${
+                  lang === l.code ? "text-black" : "text-t3 hover:text-t1"
                 }`}
                 style={
                   lang === l.code
-                    ? {
-                        background:
-                          "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                      }
+                    ? { background: "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)" }
                     : {}
                 }
               >
@@ -99,89 +65,12 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label={tr.themeAriaLabel}
-            className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all duration-200 hover:border-white/20"
+            className="glass w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all duration-200"
           >
-            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
-          </button>
-
-          {/* WhatsApp CTA */}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full"
-          >
-            <MessageCircle size={15} />
-            {tr.whatsappBtn}
-          </a>
-        </div>
-
-        {/* Mobile controls */}
-        <div className="md:hidden flex items-center gap-3">
-          {/* Language selector mobile */}
-          <div className="flex items-center gap-0.5 glass rounded-full px-1 py-1">
-            {languages.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full transition-all duration-200 ${
-                  lang === l.code ? "text-black" : "text-t3"
-                }`}
-                style={
-                  lang === l.code
-                    ? {
-                        background:
-                          "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)",
-                      }
-                    : {}
-                }
-              >
-                {l.label}
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={toggle}
-            aria-label={tr.themeAriaLabel}
-            className="glass w-9 h-9 rounded-full flex items-center justify-center text-t3 hover:text-t1 transition-all"
-          >
-            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
-          </button>
-          <button
-            className="text-t2 hover:text-t1 transition-colors"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden glass border-t border-subtle mt-3 px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-t2 hover:text-t1 text-base transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 btn-primary text-white text-sm font-semibold px-5 py-3 rounded-full mt-2"
-          >
-            <MessageCircle size={16} />
-            {tr.whatsappMobile}
-          </a>
-        </div>
-      )}
     </nav>
   );
 }
