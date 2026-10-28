@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/i18n/translations";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const evelinsStyle = `
   @font-face {
@@ -43,7 +43,15 @@ function WhatsAppIcon({ size = 24 }: { size?: number }) {
   );
 }
 
+const GOLD = "linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #F5C842 60%, #DAA520 100%)";
+
+const FEATURED = {
+  name: "Roma Open + European Nogi",
+  href: "https://galerias.thevallesfotografia.com/romaopeneuropeannogi26/",
+};
+
 const galleries = [
+  { id: 12, name: FEATURED.name, href: FEATURED.href, span: true },
   { id: 11, name: "Lisbon Open + European Kids Nogi", href: "https://galerias.thevallesfotografia.com/lisboninternationalopenibjjf26/", span: true },
   { id: 10, name: "AJP Loures", href: "https://galerias.thevallesfotografia.com/ajptour/" },
   { id: 6,  name: "AJP Sines", href: "https://galerias.thevallesfotografia.com/ajpsines/" },
@@ -62,28 +70,56 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 sm:px-10 pt-24 sm:pt-32">
-        <a href="#galleries" className="group flex items-center gap-5 sm:gap-12">
-          <div className="relative shrink-0 w-[42%] max-w-[300px] aspect-[9/16] rounded-2xl overflow-hidden glass-card">
-            <Image
-              src="/hero-galeria.jpg"
-              alt={tr.hero.galleryAvailable}
-              fill
-              preload
-              sizes="(min-width: 640px) 300px, 42vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="flex-1 min-w-0">
-            <h1
-              className="text-3xl sm:text-6xl text-white leading-tight"
-              style={{ fontFamily: "'Evellins', sans-serif", fontWeight: 400 }}
-            >
-              {tr.hero.galleryAvailable}
+      <section className="px-6 sm:px-10 pt-24 sm:pt-32">
+        <div className="max-w-5xl mx-auto flex items-center gap-4 sm:gap-12">
+          <a
+            href={FEATURED.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${FEATURED.name} – ${tr.hero.galleryAvailable}`}
+            className="group shrink-0 block w-[52%] max-w-[340px] rounded-[18px] sm:rounded-[22px] p-[2px] transition-shadow duration-500 shadow-[0_0_24px_rgba(201,168,76,0.25)] hover:shadow-[0_0_40px_rgba(201,168,76,0.45)]"
+            style={{ background: GOLD }}
+          >
+            <div className="relative aspect-[9/16] rounded-[16px] sm:rounded-[20px] overflow-hidden" style={{ background: "var(--bg-base)" }}>
+              <Image
+                src="/hero-galeria.jpg"
+                alt={FEATURED.name}
+                fill
+                preload
+                sizes="(min-width: 640px) 340px, 52vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            </div>
+          </a>
+
+          <div className="flex-1 min-w-0" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+            <h1 className="text-xl sm:text-5xl font-bold text-white leading-tight">
+              {FEATURED.name.split(" + ").map((part, i) => (
+                <span key={part} className="block">
+                  {i > 0 && <span className="font-light" style={{ color: "#DAA520" }}>+ </span>}
+                  {part}
+                </span>
+              ))}
             </h1>
-            <ArrowDown size={18} className="mt-4 sm:mt-8 text-white/40 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all" />
+
+            <a
+              href={FEATURED.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card group mt-4 sm:mt-8 w-full max-w-[320px] rounded-xl px-3 py-2.5 sm:px-5 sm:py-4 flex items-center gap-2 sm:gap-4"
+              style={{ borderColor: "rgba(201,168,76,0.35)" }}
+            >
+              <span className="hidden sm:block w-2 h-2 bg-green-400 rounded-full animate-pulse shrink-0" />
+              <span className="flex-1 min-w-0 text-t1 font-semibold text-xs sm:text-base leading-snug">{tr.hero.galleryAvailable}</span>
+              <span
+                className="shrink-0 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-black transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                style={{ background: GOLD }}
+              >
+                <ArrowUpRight size={16} />
+              </span>
+            </a>
           </div>
-        </a>
+        </div>
       </section>
 
       <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-10 sm:pt-14">
