@@ -70,30 +70,30 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="px-6 sm:px-10 pt-24 sm:pt-32">
+      <section className="px-4 sm:px-10 pt-20 sm:pt-28">
         <a
           href={FEATURED.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block mx-auto w-[80%] max-w-[360px] rounded-[22px] p-[2px] transition-shadow duration-500 shadow-[0_0_24px_rgba(201,168,76,0.25)] hover:shadow-[0_0_40px_rgba(201,168,76,0.45)]"
+          className="group block mx-auto w-full max-w-6xl rounded-[22px] p-[2px] transition-shadow duration-500 shadow-[0_0_24px_rgba(201,168,76,0.25)] hover:shadow-[0_0_40px_rgba(201,168,76,0.45)]"
           style={{ background: GOLD }}
         >
-          <div className="relative aspect-[9/16] rounded-[20px] overflow-hidden" style={{ background: "var(--bg-base)" }}>
+          <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[20px] overflow-hidden" style={{ background: "var(--bg-base)" }}>
             <Image
-              src="/hero-galeria.jpg"
+              src="/hero-roma.jpg"
               alt={FEATURED.name}
               fill
               preload
-              sizes="(min-width: 450px) 360px, 80vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              sizes="(min-width: 1232px) 1152px, 100vw"
+              className="object-cover object-[50%_60%] transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0) 55%)" }}
+              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 28%, rgba(0,0,0,0) 60%)" }}
             />
 
-            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
-              <h1 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 lg:p-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-8" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 {FEATURED.name.split(" + ").map((part, i) => (
                   <span key={part} className="block">
                     {i > 0 && <span className="font-light" style={{ color: "#DAA520" }}>+ </span>}
@@ -103,7 +103,7 @@ export default function Home() {
               </h1>
 
               <span
-                className="mt-4 w-full rounded-xl px-4 py-3 flex items-center gap-3 backdrop-blur-md"
+                className="w-full sm:w-auto sm:min-w-[260px] shrink-0 rounded-xl px-4 py-3 sm:px-5 sm:py-4 flex items-center gap-3 backdrop-blur-md"
                 style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(201,168,76,0.45)" }}
               >
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shrink-0" />
