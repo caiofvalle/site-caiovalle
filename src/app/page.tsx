@@ -123,37 +123,37 @@ export default function Home() {
       <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-10 sm:pt-14">
 
         {/* Social links */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
           <a
             href="https://www.instagram.com/caiovalle.photo"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-xl px-3.5 py-3 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4 group"
+            className="glass-card rounded-2xl px-7 py-6 flex items-center gap-5 group"
           >
-            <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-              <InstagramIcon size={20} />
+            <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+              <InstagramIcon size={22} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-t1 font-semibold text-sm sm:text-base">Instagram</p>
-              <p className="text-t4 text-xs sm:text-sm truncate">@caiovalle.photo</p>
+              <p className="text-t1 font-semibold text-base">Instagram</p>
+              <p className="text-t4 text-sm mt-0.5 truncate">@caiovalle.photo</p>
             </div>
-            <ArrowUpRight size={16} className="hidden sm:block text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
+            <ArrowUpRight size={16} className="text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
           </a>
 
           <a
             href={`https://wa.me/${WHATSAPP}?text=${waMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-xl px-3.5 py-3 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4 group"
+            className="glass-card rounded-2xl px-7 py-6 flex items-center gap-5 group"
           >
-            <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-              <WhatsAppIcon size={20} />
+            <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+              <WhatsAppIcon size={22} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-t1 font-semibold text-sm sm:text-base">WhatsApp</p>
-              <p className="text-t4 text-xs sm:text-sm truncate">{tr.navbar.whatsappBtn}</p>
+              <p className="text-t1 font-semibold text-base">WhatsApp</p>
+              <p className="text-t4 text-sm mt-0.5 truncate">{tr.navbar.whatsappBtn}</p>
             </div>
-            <ArrowUpRight size={16} className="hidden sm:block text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
+            <ArrowUpRight size={16} className="text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
           </a>
         </div>
 
