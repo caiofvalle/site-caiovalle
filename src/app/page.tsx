@@ -123,7 +123,7 @@ export default function Home() {
       <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-10 sm:pt-14">
 
         {/* Social links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
+        <div className="grid grid-cols-1 gap-4 mb-20 max-w-md mx-auto">
           <a
             href="https://www.instagram.com/caiovalle.photo"
             target="_blank"
