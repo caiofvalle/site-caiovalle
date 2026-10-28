@@ -23,6 +23,7 @@ export interface Translations {
     line1normal: string;
     line2normal: string;
     line2gradient: string;
+    galleryAvailable: string;
     subtitle: string;
     scrollAriaLabel: string;
     instagramCta: string;
@@ -149,6 +150,7 @@ export const t: Record<Lang, Translations> = {
       line1normal: " TELL THE STORIES",
       line2normal: "THAT HAPPEN ",
       line2gradient: "ON THE MAT",
+      galleryAvailable: "Gallery available",
       subtitle: "Find your photos in the galleries below.",
       scrollAriaLabel: "View galleries",
       instagramCta: "See more on my Instagram",
@@ -286,6 +288,7 @@ export const t: Record<Lang, Translations> = {
       line1normal: " CONTO AS",
       line2normal: "HISTÓRIAS QUE ACONTECEM ",
       line2gradient: "NO TATAME",
+      galleryAvailable: "Galeria disponível",
       subtitle: "Encontre suas fotos nas galerias abaixo.",
       scrollAriaLabel: "Ver galerias",
       instagramCta: "Ver mais no meu Instagram",
@@ -423,6 +426,7 @@ export const t: Record<Lang, Translations> = {
       line1normal: " RACONTE LES",
       line2normal: "HISTOIRES QUI SE DÉROULENT ",
       line2gradient: "SUR LE TATAMI",
+      galleryAvailable: "Galerie disponible",
       subtitle: "Trouvez vos photos dans les galeries ci-dessous.",
       scrollAriaLabel: "Voir les galeries",
       instagramCta: "Voir plus sur mon Instagram",
@@ -561,6 +565,7 @@ export const t: Record<Lang, Translations> = {
       line1normal: " LAS",
       line2normal: "HISTORIAS QUE SUCEDEN ",
       line2gradient: "EN EL TATAMI",
+      galleryAvailable: "Galería disponible",
       subtitle: "Encuentra tus fotos en las galerías abajo.",
       scrollAriaLabel: "Ver galerías",
       instagramCta: "Ver más en mi Instagram",

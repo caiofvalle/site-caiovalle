@@ -3,7 +3,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/i18n/translations";
 import Navbar from "@/components/Navbar";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const evelinsStyle = `
   @font-face {
@@ -61,65 +62,69 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section
-        className="relative w-full flex items-end justify-center overflow-hidden"
-        style={{ height: "60vh", minHeight: 320 }}
-      >
-        <div
-          className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/DSC07774.jpg')", backgroundPosition: "center 20%" }}
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.55) 100%)" }} />
-        <div className="relative z-10 pb-10 px-6 text-center w-full">
-          <h1
-            className="text-2xl sm:text-5xl md:text-6xl text-white leading-tight"
-            style={{ fontFamily: "'Evellins', sans-serif", fontWeight: 400 }}
-          >
-            <span className="block">{tr.hero.line1gradient}{tr.hero.line1normal}</span>
-            <span className="block">{tr.hero.line2normal}{tr.hero.line2gradient}</span>
-          </h1>
-        </div>
+      <section className="max-w-5xl mx-auto px-6 sm:px-10 pt-24 sm:pt-32">
+        <a href="#galleries" className="group flex items-center gap-5 sm:gap-12">
+          <div className="relative shrink-0 w-[42%] max-w-[300px] aspect-[9/16] rounded-2xl overflow-hidden glass-card">
+            <Image
+              src="/hero-galeria.jpg"
+              alt={tr.hero.galleryAvailable}
+              fill
+              preload
+              sizes="(min-width: 640px) 300px, 42vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h1
+              className="text-3xl sm:text-6xl text-white leading-tight"
+              style={{ fontFamily: "'Evellins', sans-serif", fontWeight: 400 }}
+            >
+              {tr.hero.galleryAvailable}
+            </h1>
+            <ArrowDown size={18} className="mt-4 sm:mt-8 text-white/40 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all" />
+          </div>
+        </a>
       </section>
 
-      <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-16">
+      <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-10 sm:pt-14">
 
         {/* Social links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-20">
           <a
             href="https://www.instagram.com/caiovalle.photo"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-2xl px-7 py-6 flex items-center gap-5 group"
+            className="glass-card rounded-xl px-3.5 py-3 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4 group"
           >
-            <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-              <InstagramIcon size={22} />
+            <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+              <InstagramIcon size={20} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-t1 font-semibold text-base">Instagram</p>
-              <p className="text-t4 text-sm mt-0.5 truncate">@caiovalle.photo</p>
+              <p className="text-t1 font-semibold text-sm sm:text-base">Instagram</p>
+              <p className="text-t4 text-xs sm:text-sm truncate">@caiovalle.photo</p>
             </div>
-            <ArrowUpRight size={16} className="text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
+            <ArrowUpRight size={16} className="hidden sm:block text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
           </a>
 
           <a
             href={`https://wa.me/${WHATSAPP}?text=${waMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-2xl px-7 py-6 flex items-center gap-5 group"
+            className="glass-card rounded-xl px-3.5 py-3 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4 group"
           >
-            <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-              <WhatsAppIcon size={22} />
+            <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+              <WhatsAppIcon size={20} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-t1 font-semibold text-base">WhatsApp</p>
-              <p className="text-t4 text-sm mt-0.5 truncate">{tr.navbar.whatsappBtn}</p>
+              <p className="text-t1 font-semibold text-sm sm:text-base">WhatsApp</p>
+              <p className="text-t4 text-xs sm:text-sm truncate">{tr.navbar.whatsappBtn}</p>
             </div>
-            <ArrowUpRight size={16} className="text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
+            <ArrowUpRight size={16} className="hidden sm:block text-white/25 group-hover:text-white/70 transition-colors shrink-0" />
           </a>
         </div>
 
         {/* Galleries */}
-        <div>
+        <div id="galleries" className="scroll-mt-24">
           <p className="text-white/35 text-xs font-medium mb-8">
             {tr.gallery.sectionLabel}
           </p>
