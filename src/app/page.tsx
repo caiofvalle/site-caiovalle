@@ -70,29 +70,28 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="px-4 sm:px-10 pt-20 sm:pt-28">
+      <section>
         <a
           href={FEATURED.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block mx-auto w-full max-w-6xl rounded-[22px] p-[2px] transition-shadow duration-500 shadow-[0_0_24px_rgba(201,168,76,0.25)] hover:shadow-[0_0_40px_rgba(201,168,76,0.45)]"
-          style={{ background: GOLD }}
+          className="group block"
         >
-          <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[20px] overflow-hidden" style={{ background: "var(--bg-base)" }}>
+          <div className="relative w-full h-[78svh] min-h-[460px] sm:h-[85vh] overflow-hidden" style={{ background: "var(--bg-base)" }}>
             <Image
               src="/hero-roma.jpg"
               alt={FEATURED.name}
               fill
               preload
-              sizes="(min-width: 1232px) 1152px, 100vw"
+              sizes="100vw"
               className="object-cover object-[50%_60%] transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 28%, rgba(0,0,0,0) 60%)" }}
+              style={{ background: "linear-gradient(to top, var(--bg-base) 0%, rgba(0,0,0,0.7) 22%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.45) 100%)" }}
             />
 
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 lg:p-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-8" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+            <div className="absolute inset-x-0 bottom-0 max-w-5xl mx-auto px-6 sm:px-10 pb-10 sm:pb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-8" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 {FEATURED.name.split(" + ").map((part, i) => (
                   <span key={part} className="block">
@@ -120,7 +119,7 @@ export default function Home() {
         </a>
       </section>
 
-      <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-10 sm:pt-14">
+      <main className="max-w-5xl mx-auto px-6 sm:px-10 pb-32 pt-6 sm:pt-10">
 
         {/* Social links */}
         <div className="grid grid-cols-1 gap-4 mb-20 max-w-md mx-auto">
