@@ -220,20 +220,29 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* Z3: the statement, bottom-left */}
-        <div className="home-after pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 sm:px-10 pb-8 sm:pb-12">
-          <div className="min-w-0">
-            <p className="f-mono text-white/80 flex items-center gap-2 mb-4 sm:mb-6">
-              <span className="relative flex w-2 h-2">
-                <span className="absolute inset-0 rounded-full animate-ping" style={{ background: "var(--gold)" }} />
-                <span className="relative w-2 h-2 rounded-full" style={{ background: "var(--gold)" }} />
-              </span>
-              {h.role}
-            </p>
-            <h1 className="f-display text-[clamp(2.6rem,9vw,10rem)]">
-              <span className="block">Media</span>
-              <span className="block">Coverage<span className="text-gold-grad">.</span></span>
-            </h1>
+        {/* Z3 → Z4: the statement bottom-left, a small sand-style signature bottom-right */}
+        <div className="home-after pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 sm:px-10 pb-8 sm:pb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+          <h1 className="f-display text-[clamp(2.35rem,8.4vw,10.5rem)]">
+            {/* handwritten line resting on the headline, like sand.black's script accents */}
+            <span
+              className="f-script text-white block w-fit origin-bottom-left -rotate-[4deg] normal-case tracking-normal leading-none text-[0.5em] mb-[0.06em] ml-[0.04em]"
+              style={{ fontWeight: 400, filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.75))" }}
+            >
+              Media Coverage
+            </span>
+            <span className="block">Let&apos;s make</span>
+            <span className="block">
+              History here!
+            </span>
+          </h1>
+
+          <div className="shrink-0 flex items-center gap-3 sm:gap-4 f-mono text-white/75 sm:pb-[0.6em]">
+            <span className="text-lg sm:text-2xl font-light leading-none text-white/50" aria-hidden>\</span>
+            <span className="leading-relaxed sm:text-right">
+              <span className="block">{h.role}</span>
+              <span className="block text-white/50">Lisboa · PT</span>
+            </span>
+            <span className="text-lg sm:text-2xl font-light leading-none text-white/50" aria-hidden>\</span>
           </div>
         </div>
 
@@ -266,7 +275,7 @@ export default function Home() {
           <div className="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
             <h2 className="f-display text-[clamp(2.5rem,7vw,6rem)]">
               {h.galleries}
-              <sup className="f-mono align-top ml-2 sm:ml-3 text-[11px] sm:text-xs tracking-[0.16em]" style={{ color: "var(--gold)" }}>
+              <sup className="f-mono align-top ml-2 sm:ml-3 text-[11px] sm:text-xs tracking-[0.16em]" style={{ color: "var(--muted)" }}>
                 ({String(galleries.length).padStart(2, "0")})
               </sup>
             </h2>
@@ -284,7 +293,7 @@ export default function Home() {
                   className="group grid grid-cols-[2.5rem_1fr_auto] sm:grid-cols-[5rem_1fr_auto] items-center gap-3 py-6 sm:py-8"
                 >
                   <span className="f-mono" style={{ color: "var(--muted)" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <span className="f-display text-[clamp(1.3rem,3.6vw,3.4rem)] transition-all duration-500 group-hover:translate-x-2 group-hover:text-[#e8c873]">
+                  <span className="f-display text-[clamp(1.3rem,3.6vw,3.4rem)] transition-all duration-500 group-hover:translate-x-2">
                     {g.name}
                     {i === 0 && (
                       <span className="f-mono align-middle ml-3 hidden sm:inline-block px-2.5 py-1 rounded-full text-black" style={{ background: "var(--gold-grad)", fontSize: 10 }}>
@@ -371,7 +380,7 @@ export default function Home() {
 
       {/* ── FOOTER: giant signature ─────────────────────── */}
       <footer className="relative overflow-hidden border-t px-5 sm:px-10 pt-10 sm:pt-14 pb-6" style={{ borderColor: "var(--line)" }}>
-        <p className="reveal f-script text-2xl sm:text-4xl mb-6 sm:mb-10 text-gold-grad">{tagline}</p>
+        <p className="reveal f-script text-2xl sm:text-4xl mb-6 sm:mb-10 text-white/80">{tagline}</p>
         <svg viewBox="0 0 1000 140" className="reveal w-full h-auto" aria-label="Caio Valle">
           <text
             x="0"
