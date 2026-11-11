@@ -22,6 +22,7 @@ const WHATSAPP_DISPLAY = "+351 925 232 484";
 const INSTAGRAM = "caiovalle.photo";
 
 const galleries = [
+  { name: "Nacional Open '26", href: "https://galerias.thevallesfotografia.com/nacionalopen26/", img: "/hero-poster-mobile.jpg" },
   { name: "Roma Open + European Nogi", href: "https://galerias.thevallesfotografia.com/romaopeneuropeannogi26/", img: "/hero-roma.jpg" },
   { name: "Lisbon Open + European Kids Nogi", href: "https://galerias.thevallesfotografia.com/lisboninternationalopenibjjf26/" },
   { name: "AJP Loures", href: "https://galerias.thevallesfotografia.com/ajptour/", img: "/ajploures.jpg" },
