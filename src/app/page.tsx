@@ -155,7 +155,6 @@ export default function Home() {
   useReveal();
 
   const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(tr.navbar.whatsappMessage)}`;
-  const tagline = `${tr.hero.line1gradient}${tr.hero.line1normal} ${tr.hero.line2normal}${tr.hero.line2gradient}`.toLowerCase();
 
   // floating preview that follows the cursor over the gallery index
   const [preview, setPreview] = useState<string | null>(null);
@@ -380,7 +379,6 @@ export default function Home() {
 
       {/* ── FOOTER: giant signature ─────────────────────── */}
       <footer className="relative overflow-hidden border-t px-5 sm:px-10 pt-10 sm:pt-14 pb-6" style={{ borderColor: "var(--line)" }}>
-        <p className="reveal f-script text-2xl sm:text-4xl mb-6 sm:mb-10 text-white/80">{tagline}</p>
         <svg viewBox="0 0 1000 140" className="reveal w-full h-auto" aria-label="Caio Valle">
           <text
             x="0"
