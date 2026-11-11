@@ -286,3 +286,15 @@ html.light .orb { display: none; }
   .home-kenburns, .home-spin, .home-marquee, .home-cue { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* hero video: opens as a small frame in the centre, then grows to full bleed */
+@keyframes home-grow {
+  0%, 18% { clip-path: inset(33% 34% 33% 34% round 18px); }
+  100% { clip-path: inset(0 0 0 0 round 0); }
+}
+.home-grow { animation: home-grow 2s cubic-bezier(.76,0,.24,1) .1s both; }
+@keyframes home-after { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.home-after { animation: home-after 1s cubic-bezier(.2,.7,.2,1) 1.7s both; }
+@media (prefers-reduced-motion: reduce) {
+  .home-grow, .home-after { animation: none; }
+}

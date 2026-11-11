@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, languages } from "@/i18n/translations";
@@ -30,7 +30,6 @@ const galleries = [
   { name: "Grandslam FPJJB '26", href: "https://galerias.thevallesfotografia.com/grandslam/", img: "/grandslam-65.jpg" },
 ];
 
-const FEATURED = galleries[0];
 
 function InstagramIcon({ size = 22 }: { size?: number }) {
   return (
@@ -63,11 +62,13 @@ function useLisbonClock() {
   return time;
 }
 
+type LenisLike = { raf: (t: number) => void; destroy: () => void };
+
 function useSmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
-    let lenis: { raf: (t: number) => void; destroy: () => void } | undefined;
+    let lenis: LenisLike | undefined;
     import("lenis").then(({ default: Lenis }) => {
       lenis = new Lenis({ lerp: 0.09 });
       const loop = (time: number) => {
@@ -81,6 +82,50 @@ function useSmoothScroll() {
       lenis?.destroy();
     };
   }, []);
+}
+
+// Landscape screens get the 16:9 cut, everything else the vertical 9:16 crop.
+const DESKTOP_MEDIA = "(min-width: 768px) and (orientation: landscape)";
+
+const { props: { srcSet: posterDesktop } } = getImageProps({
+  src: "/hero-poster-desktop.jpg", alt: "", width: 1920, height: 1080, sizes: "100vw", quality: 70,
+});
+const { props: posterProps } = getImageProps({
+  src: "/hero-poster-mobile.jpg", alt: "", width: 720, height: 1280, sizes: "100vw", quality: 70, preload: true,
+});
+
+// Loads the hero video only after the page itself has loaded, picks the
+// lightest file the device can play, and pauses it while off screen.
+function useHeroVideo(videoRef: React.RefObject<HTMLVideoElement | null>, heroRef: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const video = videoRef.current;
+    const hero = heroRef.current;
+    if (!video || !hero) return;
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    if (conn?.saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const size = window.matchMedia(DESKTOP_MEDIA).matches ? "desktop" : "mobile";
+    const codec = video.canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"') ? "hevc" : "h264";
+    let visible = true;
+    const start = () => {
+      video.src = `/video/hero-${size}-${codec}-v1.mp4`;
+      if (visible) video.play().catch(() => {});
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (!video.src) return;
+      if (visible) video.play().catch(() => {});
+      else video.pause();
+    });
+    io.observe(hero);
+    return () => {
+      window.removeEventListener("load", start);
+      io.disconnect();
+    };
+  }, [videoRef, heroRef]);
 }
 
 function useReveal() {
@@ -120,25 +165,36 @@ export default function Home() {
     }
   };
 
-  const ringText = `${h.latest} • ${h.viewPhotos} • `.toUpperCase();
+  const heroRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+  useHeroVideo(videoRef, heroRef);
 
   return (
     <div className="home min-h-screen w-full">
       <style>{evelinsStyle}</style>
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
-        <a href={FEATURED.href} target="_blank" rel="noopener noreferrer" aria-label={`${FEATURED.name} – ${h.latest}`} className="absolute inset-0">
-          <Image
-            src="/hero-roma.jpg"
-            alt={FEATURED.name}
-            fill
-            preload
-            sizes="100vw"
-            className="home-kenburns object-cover object-[50%_55%]"
+      <section ref={heroRef} className="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
+        {/* media opens small in the centre and grows to full bleed */}
+        <div className="home-grow absolute inset-0 overflow-hidden">
+          <picture>
+            <source media={DESKTOP_MEDIA} srcSet={posterDesktop} />
+            <img {...posterProps} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          </picture>
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="none"
+            aria-hidden
+            onPlaying={() => setVideoReady(true)}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: videoReady ? 1 : 0 }}
           />
-        </a>
-        <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0) 22%, rgba(10,10,10,0) 45%, rgba(10,10,10,0.9) 88%, #0a0a0a 100%)" }} />
+        </div>
+        <div className="home-after pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0) 22%, rgba(10,10,10,0) 45%, rgba(10,10,10,0.9) 88%, #0a0a0a 100%)" }} />
 
         {/* Z1 → Z2: identity left, utilities right */}
         <header className="absolute inset-x-0 top-0 z-20 px-5 sm:px-10 pt-5 sm:pt-7 grid grid-cols-[1fr_auto] sm:grid-cols-3 items-center">
@@ -163,55 +219,25 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* role, top-left under the logo */}
-        <p className="pointer-events-none absolute left-5 sm:left-10 top-[4.75rem] sm:top-24 z-10 f-mono text-white/70">
-          {h.role}
-        </p>
-
-        {/* Z3 → Z4: the event on the left, the action on the right */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 sm:px-10 pb-8 sm:pb-12 flex flex-col-reverse sm:flex-row items-end justify-between gap-4 sm:gap-6">
-          <div className="min-w-0 w-full sm:w-auto">
+        {/* Z3: the statement, bottom-left */}
+        <div className="home-after pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 sm:px-10 pb-8 sm:pb-12">
+          <div className="min-w-0">
             <p className="f-mono text-white/80 flex items-center gap-2 mb-4 sm:mb-6">
               <span className="relative flex w-2 h-2">
                 <span className="absolute inset-0 rounded-full animate-ping" style={{ background: "var(--gold)" }} />
                 <span className="relative w-2 h-2 rounded-full" style={{ background: "var(--gold)" }} />
               </span>
-              (01) {h.latest}
+              {h.role}
             </p>
-            <h1 className="f-display text-[clamp(2.1rem,7.4vw,9rem)]">
-              <span className="block">Roma Open</span>
-              <span className="block">
-                <span className="whitespace-nowrap"><span className="text-gold-grad">+</span>&nbsp;European</span> Nogi
-              </span>
+            <h1 className="f-display text-[clamp(2.6rem,9vw,10rem)]">
+              <span className="block">Media</span>
+              <span className="block">Coverage<span className="text-gold-grad">.</span></span>
             </h1>
           </div>
-
-          <a
-            href={FEATURED.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pointer-events-auto group relative shrink-0 w-[5.5rem] h-[5.5rem] sm:w-36 sm:h-36"
-            aria-label={h.viewPhotos}
-          >
-            <svg viewBox="0 0 100 100" className="home-spin absolute inset-0 w-full h-full" aria-hidden>
-              <defs>
-                <path id="ring" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" />
-              </defs>
-              <text className="f-mono" style={{ fontSize: 8.6, letterSpacing: 2.2, fill: "rgba(247,247,245,0.85)" }}>
-                <textPath href="#ring">{ringText}</textPath>
-              </text>
-            </svg>
-            <span
-              className="absolute inset-[26%] rounded-full flex items-center justify-center text-black transition-transform duration-500 group-hover:scale-110"
-              style={{ background: "var(--gold-grad)" }}
-            >
-              <ArrowUpRight className="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-500 group-hover:rotate-45" />
-            </span>
-          </a>
         </div>
 
         {/* scroll cue */}
-        <div className="pointer-events-none hidden sm:flex absolute left-1/2 -translate-x-1/2 bottom-6 z-10 flex-col items-center gap-2 f-mono text-white/50">
+        <div className="home-after pointer-events-none hidden sm:flex absolute left-1/2 -translate-x-1/2 bottom-6 z-10 flex-col items-center gap-2 f-mono text-white/50">
           <span>{h.scroll}</span>
           <span className="block w-px h-8 bg-white/50 home-cue" />
         </div>
