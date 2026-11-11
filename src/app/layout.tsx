@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Montserrat } from "next/font/google";
+import { Geist, Archivo, Hanken_Grotesk, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+});
+
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
+  subsets: ["latin"],
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const geist = Geist({
@@ -44,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${geist.variable} ${montserrat.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${geist.variable} ${archivo.variable} ${hanken.variable} ${dmMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-base text-t1">
         <LanguageProvider>
           <ThemeProvider>{children}</ThemeProvider>

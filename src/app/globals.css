@@ -221,3 +221,68 @@ body {
 .orb-amber  { display: none; }
 
 html.light .orb { display: none; }
+
+/* ── Home (sand-inspired redesign) ───────────────────── */
+.home {
+  --ink: #0a0a0a;
+  --panel: #121212;
+  --line: rgba(247, 247, 245, 0.1);
+  --line-strong: rgba(247, 247, 245, 0.22);
+  --paper: #f2f2ef;
+  --muted: #8d8c86;
+  --gold: #d9b25f;
+  --gold-grad: linear-gradient(135deg, #8b6914 0%, #ffd700 35%, #f5c842 60%, #daa520 100%);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-hanken), system-ui, sans-serif;
+}
+.f-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+.f-mono {
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.f-script { font-family: "Evellins", cursive; }
+.text-gold-grad {
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* hero image: slow cinematic push-in */
+@keyframes home-kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
+.home-kenburns { animation: home-kenburns 9s cubic-bezier(.2,.7,.2,1) both; }
+
+/* rotating ring around the hero CTA */
+@keyframes home-spin { to { transform: rotate(360deg); } }
+.home-spin { animation: home-spin 16s linear infinite; }
+
+/* marquee */
+@keyframes home-marquee { to { transform: translateX(-50%); } }
+.home-marquee { animation: home-marquee 38s linear infinite; }
+.text-outline { color: transparent; -webkit-text-stroke: 1px rgba(247, 247, 245, 0.35); }
+
+/* scroll cue */
+@keyframes home-cue { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+.home-cue { animation: home-cue 2.4s cubic-bezier(.6,0,.2,1) infinite; }
+
+/* reveal on scroll */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* hover preview only on real pointers */
+.home-preview { display: none; }
+@media (hover: hover) and (pointer: fine) { .home-preview { display: block; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-kenburns, .home-spin, .home-marquee, .home-cue { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
