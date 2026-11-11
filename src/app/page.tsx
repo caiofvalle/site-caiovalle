@@ -222,10 +222,10 @@ export default function Home() {
         {/* Z3 → Z4: the statement bottom-left, a small sand-style signature bottom-right */}
         <div className="home-after pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 sm:px-10 pb-8 sm:pb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-5">
           <h1 className="f-display text-[clamp(2.35rem,8.4vw,10.5rem)]">
-            {/* handwritten line resting on the headline, like sand.black's script accents */}
+            {/* handwritten caps above the headline, like sand.black's Jeff Script captions */}
             <span
-              className="f-script text-white block w-fit origin-bottom-left -rotate-[4deg] normal-case tracking-normal leading-none text-[0.5em] mb-[0.06em] ml-[0.04em]"
-              style={{ fontWeight: 400, filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.75))" }}
+              className="f-hand block text-white/85 leading-none text-[clamp(1.1rem,2.2vw,2rem)] mb-[0.3em] sm:mb-[0.35em] ml-[0.04em]"
+              style={{ filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.6))" }}
             >
               Media Coverage
             </span>
@@ -245,11 +245,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* scroll cue */}
-        <div className="home-after pointer-events-none hidden sm:flex absolute left-1/2 -translate-x-1/2 bottom-6 z-10 flex-col items-center gap-2 f-mono text-white/50">
-          <span>{h.scroll}</span>
-          <span className="block w-px h-8 bg-white/50 home-cue" />
-        </div>
       </section>
 
       {/* ── MARQUEE ──────────────────────────────────────── */}

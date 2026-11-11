@@ -298,3 +298,11 @@ html.light .orb { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .home-grow, .home-after { animation: none; }
 }
+
+/* handwritten caption caps (free stand-in for sand.black's Jeff Script) */
+.f-hand {
+  font-family: var(--font-hand), cursive;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
