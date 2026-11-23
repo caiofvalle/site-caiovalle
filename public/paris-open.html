@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBJJF Paris Open 2026 – Photo Coverage</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background: #ececec;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 24px 16px 48px;
+    color: #111111;
+  }
+  .toggle { display: flex; gap: 6px; margin-bottom: 20px; background: #fff; padding: 5px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+  .toggle button { border: 0; background: transparent; padding: 8px 20px; border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; color: #666666; }
+  .toggle button.active { background: #111111; color: #fff; }
+
+  .card { width: 100%; max-width: 560px; background: #fff; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 50px rgba(20,33,61,.18); }
+  .hero { background: linear-gradient(135deg, #111111 0%, #2e2e2e 100%); color: #fff; padding: 34px 32px 30px; text-align: center; }
+  .hero .tag { display: inline-block; font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #fca311; margin-bottom: 10px; }
+  .hero h1 { font-size: 27px; line-height: 1.2; font-weight: 800; }
+  .hero p { margin-top: 12px; font-size: 14.5px; color: #d4d4d4; }
+
+  .body { padding: 28px 28px 8px; }
+  h2 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #fca311; font-weight: 800; margin-bottom: 14px; }
+
+  .pack { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #d9d9d9; border-radius: 18px; padding: 16px 18px; margin-bottom: 12px; }
+  .pack.best { border-color: #fca311; background: #fff8ec; }
+  .pack .name { font-size: 16.5px; font-weight: 700; }
+  .pack .sub { font-size: 13.5px; color: #666666; margin-top: 3px; }
+  .pack .price { font-size: 28px; font-weight: 800; color: #111111; white-space: nowrap; }
+
+  .section { margin-top: 26px; }
+  .extra { background: #f5f5f5; border-radius: 16px; padding: 16px 18px; margin-bottom: 12px; font-size: 14.5px; line-height: 1.5; }
+  .extra .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 6px; }
+  .extra strong { font-size: 15.5px; }
+  .extra .p { font-weight: 800; font-size: 18px; white-space: nowrap; }
+  .warn { font-size: 13px; color: #8a5a00; background: #fff3d6; border-radius: 10px; padding: 9px 12px; margin-top: 8px; line-height: 1.45; }
+
+  .list { list-style: none; }
+  .list li { display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5; padding: 10px 0; border-bottom: 1px solid #e6e6e6; }
+  .list li:last-child { border-bottom: 0; }
+  .list .ic { font-size: 20px; line-height: 1.3; }
+
+  .foot { margin-top: 18px; padding: 18px 28px 26px; text-align: center; background: #f5f5f5; font-size: 14px; color: #666666; }
+  .foot b { color: #111111; }
+  [data-l] { display: none; }
+  body.en [data-l="en"], body.pt [data-l="pt"] { display: revert; }
+  body.en span[data-l="en"], body.pt span[data-l="pt"] { display: inline; }
+
+  /* ── Mobile ── */
+  html { -webkit-text-size-adjust: 100%; }
+  @media (max-width: 480px) {
+    body { padding: 14px 10px 32px; }
+    .toggle { margin-bottom: 14px; }
+    .toggle button { padding: 9px 18px; font-size: 14px; }
+    .card { border-radius: 22px; }
+    .hero { padding: 28px 20px 24px; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 13.5px; }
+    .body { padding: 22px 16px 4px; }
+    .pack { padding: 14px 14px; gap: 10px; border-radius: 16px; }
+    .pack .name { font-size: 15px; }
+    .pack .sub { font-size: 13px; }
+    .pack .price { font-size: 24px; }
+    .extra { padding: 14px 14px; font-size: 14px; }
+    .extra .row { flex-wrap: wrap; }
+    .extra .p { font-size: 17px; }
+    .list li { font-size: 14px; gap: 10px; }
+    .foot { padding: 16px 16px 22px; font-size: 14px; }
+  }
+  @media (max-width: 340px) {
+    .pack { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body class="en">
+
+<div class="toggle">
+  <button id="b-en" class="active" onclick="setLang('en')">🇬🇧 English</button>
+  <button id="b-pt" onclick="setLang('pt')">🇧🇷 Português</button>
+</div>
+
+<div class="card">
+  <div class="hero">
+    <div class="tag">📸 PHOTO COVERAGE</div>
+    <h1 data-l="en">IBJJF PARIS<br>OPEN 2026 🥋</h1>
+    <h1 data-l="pt">IBJJF PARIS<br>OPEN 2026 🥋</h1>
+    <p data-l="en">🕐 All content delivered in a private gallery up to 24h after the event</p>
+    <p data-l="pt">🕐 Todo o conteúdo entregue em galeria privada em até 24h após o evento</p>
+  </div>
+
+  <div class="body">
+    <h2 data-l="en">Fight Packs – Photo</h2>
+    <h2 data-l="pt">Pacotes de Luta – Foto</h2>
+
+    <div class="pack">
+      <div>
+        <div class="name" data-l="en">🥊 First Fight</div>
+        <div class="name" data-l="pt">🥊 Primeira Luta</div>
+        <div class="sub">10+ <span data-l="en">photos</span><span data-l="pt">fotos</span></div>
+      </div>
+      <div class="price">85€</div>
+    </div>
+
+    <div class="pack best">
+      <div>
+        <div class="name" data-l="en">🏆 Full Weight Class</div>
+        <div class="name" data-l="pt">🏆 Categoria de Peso Completa</div>
+        <div class="sub">20+ <span data-l="en">photos</span><span data-l="pt">fotos</span></div>
+      </div>
+      <div class="price">180€</div>
+    </div>
+
+    <div class="pack">
+      <div>
+        <div class="name" data-l="en">👑 Full Weight Class + Absolute</div>
+        <div class="name" data-l="pt">👑 Categoria Completa + Absoluto</div>
+        <div class="sub">35+ <span data-l="en">photos</span><span data-l="pt">fotos</span></div>
+      </div>
+      <div class="price">350€</div>
+    </div>
+
+    <div class="section">
+      <h2 data-l="en">Extras</h2>
+      <h2 data-l="pt">Extras</h2>
+
+      <div class="extra">
+        <div class="row">
+          <strong data-l="en">🎬 Edited Reel</strong>
+          <strong data-l="pt">🎬 Reel Editado</strong>
+          <span class="p">+60€</span>
+        </div>
+        <span data-l="en">Prefer reels? We can cover your fight on video and include an edited reel.</span>
+        <span data-l="pt">Prefere reels? Podemos cobrir sua luta em vídeo e incluir um reel editado.</span>
+        <div class="warn" data-l="en">⚠️ This reduces the number of photos delivered from the fights, and you might not get photos of the fight in case of a first-round defeat.</div>
+        <div class="warn" data-l="pt">⚠️ Isso reduz o número de fotos entregues das lutas, e você pode não receber fotos da luta em caso de derrota na primeira rodada.</div>
+      </div>
+
+      <div class="extra">
+        <div class="row">
+          <strong data-l="en">🎞️ Raw Video Rushes</strong>
+          <strong data-l="pt">🎞️ Material Bruto de Vídeo</strong>
+          <span class="p">+50€</span>
+        </div>
+        <span data-l="en">All video rushes delivered for your personal use and edits.</span>
+        <span data-l="pt">Todo o material bruto de vídeo para uso pessoal e edição própria.</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-l="en">Good to know</h2>
+      <h2 data-l="pt">Bom saber</h2>
+      <ul class="list">
+        <li><span class="ic">🔒</span>
+          <span data-l="en">All content delivered in a private gallery up to <b>48h</b> after the fights.</span>
+          <span data-l="pt">Todo o conteúdo entregue em galeria privada em até <b>48h</b> após as lutas.</span></li>
+        <li><span class="ic">🥇</span>
+          <span data-l="en">Includes photos at the <b>podium</b> and <b>backstage</b>.</span>
+          <span data-l="pt">Inclui fotos no <b>pódio</b> e nos <b>bastidores</b>.</span></li>
+        <li><span class="ic">💶</span>
+          <span data-l="en"><b>40% refund</b> if you book a full weight class but there is only 1 fight on the day of competition.</span>
+          <span data-l="pt"><b>40% de reembolso</b> se contratar a categoria completa e houver apenas 1 luta no dia da competição.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span data-l="en">📩 For more info: <b>+351 925 232 484</b></span>
+    <span data-l="pt">📩 Para mais informações: <b>+351 925 232 484</b></span>
+  </div>
+</div>
+
+<script>
+function setLang(l){
+  document.body.className = l;
+  document.documentElement.lang = l;
+  document.getElementById('b-en').classList.toggle('active', l==='en');
+  document.getElementById('b-pt').classList.toggle('active', l==='pt');
+}
+</script>
+</body>
+</html>
