@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Coverage – Caio Valle</title>
+<meta name="description" content="Fight packs, prices and extras for BJJ photo coverage by Caio Valle.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Photo Coverage – Caio Valle">
+<meta property="og:description" content="Fight packs, prices and extras for BJJ photo coverage.">
+<meta property="og:url" content="https://www.caiovalle.com/coverage">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background: #ececec;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 24px 16px 48px;
+    color: #111111;
+  }
+  .toggle { display: flex; gap: 6px; margin-bottom: 20px; background: #fff; padding: 5px; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+  .toggle button { border: 0; background: transparent; padding: 8px 20px; border-radius: 0; font-size: 14px; font-weight: 600; cursor: pointer; color: #666666; }
+  .toggle button.active { background: #111111; color: #fff; }
+
+  .card { width: 100%; max-width: 560px; background: #fff; border-radius: 0; overflow: hidden; box-shadow: 0 20px 50px rgba(20,33,61,.18); }
+  .hero { background: linear-gradient(135deg, #111111 0%, #2e2e2e 100%); color: #fff; padding: 34px 32px 30px; text-align: center; }
+  .hero .tag { display: inline-block; font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #fca311; margin-bottom: 10px; }
+  .hero h1 { font-size: 27px; line-height: 1.2; font-weight: 800; }
+  .hero p { margin-top: 12px; font-size: 14.5px; color: #d4d4d4; }
+
+  .body { padding: 28px 28px 8px; }
+  h2 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #fca311; font-weight: 800; margin-bottom: 14px; }
+
+  .pack { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #d9d9d9; border-radius: 0; padding: 16px 18px; margin-bottom: 12px; }
+  .pack.best { border-color: #fca311; background: #fff8ec; }
+  .pack .name { font-size: 16.5px; font-weight: 700; }
+  .pack .sub { font-size: 13.5px; color: #666666; margin-top: 3px; }
+  .pack .price { font-size: 28px; font-weight: 800; color: #111111; white-space: nowrap; }
+
+  .section { margin-top: 26px; }
+  .extra { background: #f5f5f5; border-radius: 0; padding: 16px 18px; margin-bottom: 12px; font-size: 14.5px; line-height: 1.5; }
+  .extra .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 6px; }
+  .extra strong { font-size: 15.5px; }
+  .extra .p { font-weight: 800; font-size: 18px; white-space: nowrap; }
+  .warn { font-size: 13px; color: #8a5a00; background: #fff3d6; border-radius: 0; padding: 9px 12px; margin-top: 8px; line-height: 1.45; }
+
+  .list { list-style: none; }
+  .list li { display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5; padding: 10px 0; border-bottom: 1px solid #e6e6e6; }
+  .list li:last-child { border-bottom: 0; }
+  .list .ic { font-size: 20px; line-height: 1.3; }
+
+  .foot { margin-top: 18px; padding: 18px 28px 26px; text-align: center; background: #f5f5f5; font-size: 14px; color: #666666; }
+  .foot b { color: #111111; }
+  [data-l] { display: none; }
+  body.en [data-l="en"], body.pt [data-l="pt"], body.fr [data-l="fr"] { display: revert; }
+  body.en span[data-l="en"], body.pt span[data-l="pt"], body.fr span[data-l="fr"] { display: inline; }
+
+  /* ── Mobile ── */
+  html { -webkit-text-size-adjust: 100%; }
+  @media (max-width: 480px) {
+    body { padding: 14px 10px 32px; }
+    .toggle { margin-bottom: 14px; }
+    .toggle button { padding: 9px 13px; font-size: 13.5px; }
+    .card { border-radius: 0; }
+    .hero { padding: 28px 20px 24px; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 13.5px; }
+    .body { padding: 22px 16px 4px; }
+    .pack { padding: 14px 14px; gap: 10px; border-radius: 0; }
+    .pack .name { font-size: 15px; }
+    .pack .sub { font-size: 13px; }
+    .pack .price { font-size: 24px; }
+    .extra { padding: 14px 14px; font-size: 14px; }
+    .extra .row { flex-wrap: wrap; }
+    .extra .p { font-size: 17px; }
+    .list li { font-size: 14px; gap: 10px; }
+    .foot { padding: 16px 16px 22px; font-size: 14px; }
+  }
+  @media (max-width: 340px) {
+    .pack { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body class="en">
+
+<div class="toggle">
+  <button id="b-en" class="active" onclick="setLang('en')">🇬🇧 English</button>
+  <button id="b-pt" onclick="setLang('pt')">🇧🇷 Português</button>
+  <button id="b-fr" onclick="setLang('fr')">🇫🇷 Français</button>
+</div>
+
+<div class="card">
+  <div class="hero">
+    <div class="tag">📸 <span data-l="en">PACKS &amp; PRICES</span><span data-l="pt">PACKS &amp; PREÇOS</span><span data-l="fr">PACKS &amp; TARIFS</span></div>
+    <h1 data-l="en">PHOTO COVERAGE 🥋</h1>
+    <h1 data-l="pt">PHOTO COVERAGE 🥋</h1>
+    <h1 data-l="fr">PHOTO COVERAGE 🥋</h1>
+    <p data-l="en">🕐 All content delivered in a private gallery up to 24h after the event</p>
+    <p data-l="pt">🕐 Todo o conteúdo entregue em galeria privada em até 24h após o evento</p>
+    <p data-l="fr">🕐 Tout le contenu est livré dans une galerie privée jusqu'à 24h après l'événement</p>
+  </div>
+
+  <div class="body">
+    <h2 data-l="en">Fight Packs – Photo</h2>
+    <h2 data-l="pt">Pacotes de Luta – Foto</h2>
+    <h2 data-l="fr">Packs de combat – Photo</h2>
+
+    <div class="pack">
+      <div>
+        <div class="name" data-l="en">🥊 First Fight</div>
+        <div class="name" data-l="pt">🥊 Primeira Luta</div>
+        <div class="name" data-l="fr">🥊 Premier combat</div>
+        <div class="sub">5+ <span data-l="en">photos</span><span data-l="pt">fotos</span><span data-l="fr">photos</span></div>
+      </div>
+      <div class="price">55€</div>
+    </div>
+
+    <div class="pack best">
+      <div>
+        <div class="name" data-l="en">🏆 Full Weight Class</div>
+        <div class="name" data-l="pt">🏆 Categoria de Peso Completa</div>
+        <div class="name" data-l="fr">🏆 Catégorie de poids complète</div>
+        <div class="sub">15+ <span data-l="en">photos</span><span data-l="pt">fotos</span><span data-l="fr">photos</span></div>
+      </div>
+      <div class="price">85€</div>
+    </div>
+
+    <div class="pack">
+      <div>
+        <div class="name" data-l="en">👑 Full Weight Class + Absolute (Open Class)</div>
+        <div class="name" data-l="pt">👑 Categoria Completa + Absoluto (Open Class)</div>
+        <div class="name" data-l="fr">👑 Catégorie complète + Absolu (Open Class)</div>
+        <div class="sub">25+ <span data-l="en">photos</span><span data-l="pt">fotos</span><span data-l="fr">photos</span></div>
+      </div>
+      <div class="price">150€</div>
+    </div>
+
+    <div class="section">
+      <h2 data-l="en">Extras</h2>
+      <h2 data-l="pt">Extras</h2>
+      <h2 data-l="fr">Extras</h2>
+
+      <div class="extra">
+        <div class="row">
+          <strong data-l="en">🎬 Edited Reel</strong>
+          <strong data-l="pt">🎬 Reel Editado</strong>
+          <strong data-l="fr">🎬 Reel monté</strong>
+          <span class="p">+60€</span>
+        </div>
+        <span data-l="en">Prefer reels? We can film your most important fight (to be agreed) and include an edited reel.</span>
+        <span data-l="pt">Prefere reels? Podemos fazer o vídeo da sua luta mais importante (a combinar) e incluir um reel editado.</span>
+        <span data-l="fr">Vous préférez les reels ? Nous pouvons filmer votre combat le plus important (à convenir) et inclure un reel monté.</span>
+        <div class="warn" data-l="en">⚠️ This reduces the number of photos delivered from the fights, and you might not get photos of the fight in case of a first-round defeat.</div>
+        <div class="warn" data-l="pt">⚠️ Isso reduz o número de fotos entregues das lutas, e você pode não receber fotos da luta em caso de derrota na primeira rodada.</div>
+        <div class="warn" data-l="fr">⚠️ Cela réduit le nombre de photos livrées des combats, et vous pourriez ne pas avoir de photos du combat en cas de défaite au premier tour.</div>
+      </div>
+
+      <div class="extra">
+        <div class="row">
+          <strong data-l="en">🎞️ Raw Video Rushes</strong>
+          <strong data-l="pt">🎞️ Material Bruto de Vídeo</strong>
+          <strong data-l="fr">🎞️ Rushes vidéo bruts</strong>
+          <span class="p">+50€</span>
+        </div>
+        <span data-l="en">All video rushes delivered for your personal use and edits.</span>
+        <span data-l="pt">Todo o material bruto de vídeo para uso pessoal e edição própria.</span>
+        <span data-l="fr">Tous les rushes vidéo livrés pour votre usage personnel et vos propres montages.</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-l="en">Good to know</h2>
+      <h2 data-l="pt">Bom saber</h2>
+      <h2 data-l="fr">Bon à savoir</h2>
+      <ul class="list">
+        <li><span class="ic">🔒</span>
+          <span data-l="en">All content delivered in a private gallery up to <b>48h</b> after the fights.</span>
+          <span data-l="pt">Todo o conteúdo entregue em galeria privada em até <b>48h</b> após as lutas.</span>
+          <span data-l="fr">Tout le contenu est livré dans une galerie privée jusqu'à <b>48h</b> après les combats.</span></li>
+        <li><span class="ic">🥇</span>
+          <span data-l="en">Includes photos at the <b>podium</b> and <b>backstage</b>.</span>
+          <span data-l="pt">Inclui fotos no <b>pódio</b> e nos <b>bastidores</b>.</span>
+          <span data-l="fr">Inclut des photos sur le <b>podium</b> et en <b>coulisses</b>.</span></li>
+        <li><span class="ic">💶</span>
+          <span data-l="en"><b>40% refund</b> if you book a full weight class but there is only 1 fight on the day of competition.</span>
+          <span data-l="pt"><b>40% de reembolso</b> se contratar a categoria completa e houver apenas 1 luta no dia da competição.</span>
+          <span data-l="fr"><b>40 % de remboursement</b> si vous réservez une catégorie de poids complète mais qu'il n'y a qu'un seul combat le jour de la compétition.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span data-l="en">📩 For more info: <b>+351 925 232 484</b></span>
+    <span data-l="pt">📩 Para mais informações: <b>+351 925 232 484</b></span>
+    <span data-l="fr">📩 Pour plus d'informations : <b>+351 925 232 484</b></span>
+  </div>
+</div>
+
+<script>
+function setLang(l){
+  document.body.className = l;
+  document.documentElement.lang = l;
+  document.getElementById('b-en').classList.toggle('active', l==='en');
+  document.getElementById('b-pt').classList.toggle('active', l==='pt');
+  document.getElementById('b-fr').classList.toggle('active', l==='fr');
+}
+</script>
+</body>
+</html>
