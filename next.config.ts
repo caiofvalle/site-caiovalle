@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [{ source: "/coverage", destination: "/coverage.html" }];
   },
-  async redirects() {
-    return [{ source: "/paris-open", destination: "/coverage", permanent: false }];
-  },
   images: {
     remotePatterns: [
       {
